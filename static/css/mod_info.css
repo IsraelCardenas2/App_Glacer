@@ -1,0 +1,227 @@
+#div_form_modl{
+    width: 100%;
+}
+.mmmop1{
+    width:700px;
+    height: 410px;
+    margin-top: 40px;
+    transform: translateX(-100px);
+    border-radius: 4px;
+}
+.mmmop2{
+    width: 750px;
+    height: 410px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+.Hola_form{
+    height: 430px;
+}
+.op22{
+    height: 95%;
+}
+.imagen_defect22{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 230, 230);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: rgba(255, 255, 255, 0);
+}
+.img_defect{
+    display: inline-block;
+    width: 100%;
+    height: 96.6%;
+    background-color: rgb(255, 230, 230);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: rgba(255, 255, 255, 0);
+}
+.imagen_defect2{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/img/Logos/recep.jpg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: rgba(255, 255, 255, 0);
+}
+.LLDefect{
+    padding-top: 8px;
+}
+.rr2{
+    display: flex;
+    width: 475px;
+}
+.disable{
+    font-style: normal gray;
+}
+.form_reg{
+    margin-top: 15px;
+    width: 95%;
+}
+.campos_p{
+    display: inline-block;
+    margin-left: 20px;
+    width: 100%;
+}
+.Campos_P2{
+    display: inline-block;
+    margin-left: 20px;
+    width: 100%;
+}
+.btn-registro{
+    margin-top: 11px;
+    margin-bottom: 28px;
+    margin-left: 1px;
+    width: 83px;
+    height: 35px;
+    background-color: #198754;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 400;
+    font-size: 15px;
+    font-style:normal;
+    text-align: center;
+    border-radius: 6px;
+    border-style: none;
+}
+.btn-cancelar{
+    margin-top: 11px;
+    width: 83px;
+    height: 35px;
+    background-color: rgb(255, 50, 50);
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 400;
+    font-size: 15px;
+    font-style:normal;
+    text-align: center;
+    border-radius: 6px;
+    border-style: none;
+}
+.inpt{
+    margin: 5px 0;
+    background-color: white !important;
+}
+/*---------------- Imágenes de los productos ---------------------*/
+.img1{
+    margin: 6px 0 1px 14px;
+    height: 195px;
+}
+.img2{
+    margin: 5px 0 1px 14px;
+    height: 195px;
+}
+.imag1{
+    margin-top: 5px;
+    width: 95%;
+    height: 100%;
+    transition-duration: 1.2s;
+}
+.imag1:hover{
+    translate: 205px 170px;
+    transform: scale(2.4);
+    transition-duration: 1.2s;
+}
+.imag2{
+    margin: 0px auto;
+    margin-top: 9px;
+    width: 95%;
+    height: 100%;
+    transition-duration: 1.2s;
+}
+.imag2:hover{
+    translate: 205px -75px;
+    transform: scale(2.4);
+    transform-origin: center;
+    transition-duration: 1.2s;
+}
+img.escalada {
+    transform: scale(1.1);
+}
+.oferta_form{
+    padding-top: 15px;
+}
+
+
+/*-----------------------  Estilos para el encabezado de ofertas Catalogo  -------------------*/
+.img_fondo_Ofertas{
+    width: 100%;
+    background-image: url('/static/img/Logos/porcelanato\ 02.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+.img_fondo_PM{
+    width: 100%;
+    background-image: url('/static/img/Logos/Daltile\ NaviaGris.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: auto;
+}
+.contenedor_rombos{
+    background-color: #ffffff00;
+    width: 40%;
+    display: flex;
+    margin-left: 60%;
+    padding-left: 150px;
+}
+.rombo_uno {
+    width: 50px; /* Ancho del romboide */
+    height: 250px; /* Alto del romboide */
+    background-color: rgba(255, 255, 255, 0.664); /* Color de fondo gris */
+    transform: skew(-30deg); /* Inclina el div para formar el romboide */
+    margin-left: 11px; /* Espaciado externo */
+  }
+.rombo_dos{
+    width: 50px; /* Ancho del romboide */
+    height: 250px; /* Alto del romboide */
+    background-color: rgba(255, 255, 255, 0); /* Color de fondo gris */
+    transform: skew(-30deg); /* Inclina el div para formar el romboide */
+    margin-left: 3px; /* Espaciado externo */
+}
+.rombo_tres{
+    width: 327px; /* Ancho del romboide */
+    height: 250px; /* Alto del romboide */
+    background-color: rgba(255, 255, 255, 0.616); /* Color de fondo gris */
+    position: relative;
+    clip-path: polygon(43% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.texto_ofert{
+    width: 55%;
+    color: Black;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 550;
+    font-size: 25px;
+    font-style:normal;
+    text-align: center;
+    translate: 125px 63px;
+    text-transform: uppercase;
+
+}
+.exlamacion{
+    color: red;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 550;
+    font-size: 25px;
+    font-style:normal;
+}
+
+.Mod_Grif_Cat{
+    height: 431px;
+}

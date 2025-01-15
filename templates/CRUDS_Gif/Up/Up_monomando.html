@@ -1,0 +1,54 @@
+{%for mono in list_mono%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-monomandos{{mono.Id_Monomando}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form action="{{url_for('Act_Monomando', id=mono.Id_Monomando)}}" method="post" class="form_reg rr2 upMonos" enctype="multipart/form-data">
+                <div class="form-group campos_p">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{mono.Nombre}}" class="form-control inpt"  required>
+                    <span class="span_text">Error !! el formato a seguir es: Lake Beige</span>
+                    <label for="Codigo" class="lab">Codigo:</label>
+                    <input type="text" name="Codigo_act" value="{{mono.Codigo}}" class="form-control inpt"  required>
+                    <span class="span_codigo">Error !! solo mayúsculas y números</span>
+                    <label for="Precio" class="lab">Precio:</label>
+                    <input type="number" name="Precio_act" value="{{mono.Precio}}" class="form-control inpt" required>
+                    <span class="span_precio">Error !! solo se aceptan números</span>
+                    <label for="Precio_Ant" class="lab">Precio anterior:</label>
+                    <input type="number" name="PrecioAnt_act" class="form-control inpt" required>
+                    <span class="span_PrecioAnt">Error !! solo se aceptan números</span>
+                    <label for="Marca" class="lab">Marca:</label>
+                    <input type="text" name="Marca_act" value="{{mono.Marca}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_marca">Error !! la marca es requerida</span>
+                    <label for="Color" class="lab">Color:</label>
+                    <input type="text" name="Color_act" value="{{mono.Color}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_color">Error !! la marca es requerida</span>
+                    <label for="Material_act" class="lab">Material:</label>
+                    <input type="text" name="Material_act" value="{{mono.Material}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_material">Error !! la marca es requerida</span>
+                  </div>
+                  <div class="form-group Campos_P2">
+                    <label for="Medida" class="lab">Presion:</label>
+                    <input type="text" name="Presion_act" value="{{mono.Presion}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_presion">Error !! la marca es requerida</span>
+                    <label for="Complementos" class="lab">Complementos:</label>
+                    <input type="text" name="Complementos_act" value="{{mono.Complementos}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_complementos">Error !! la marca es requerida</span>
+                    <label for="inptchaI" class="lab">Imagen:</label>
+                    <input type="file" name="Imagen_act" class="form-control inpt" id="inptchaI">
+                    <label for="inptchaI" class="lab">Imagen 2:</label>
+                    <input type="file" name="IMG2_act" class="form-control inpt" id="inptchaI">
+                    <div class="contenedor_files">
+                      <!-- Se generará un formulario multipasos para poder agregar los campos para recaudar la imágenes-->
+                    </div>
+                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="submit" class="float-right btn-registro">Actualizar</button>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{%endfor%}

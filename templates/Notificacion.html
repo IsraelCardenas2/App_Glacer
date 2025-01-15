@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/mensajeria.css">
+</head>
+<body>
+    <div class="contenedor_mensaje">
+        <div class="Taco">
+            <h2 class="titulito">GLACER S.A. de C.V.</h2>
+            <div class="datos_asist">
+                <img src="/static/img/photo.jpg" alt="Usuario" style="height: 40px; width: 40px; border-radius: 50%; margin: 2px 3
+                3px 2px 10px;">
+                <div class="texto"><p class="soporte">Soporte</p> <P class="name_admin">Servicio al cliente</P> </div>
+            </div>
+        </div>
+        <div class="mensaje">
+            <div class="datos_user"><h2 class="nombre">Hola!, {{hola}}</h2></div>
+            <lavel class="label_mensaje">Mensaje</lavel><br>
+            <div class="textArea">
+                <textarea class="form-control" name="Mensaje" id="Mensaje" rows="3"></textarea>
+            </div>
+        </div>
+        <hr>
+        <a type="button" class="btn-cancelar btn-close" href="#">Cancelar</a>
+        <button type="submit" class="btn-registro">Enviar</button>
+    </div>
+</body>
+</html>

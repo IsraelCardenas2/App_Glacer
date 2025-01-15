@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Panel de administrador</title>
+    <link rel="stylesheet" href="/static/css/Panel_Adm.css">
+    <link rel="stylesheet" href="/static/css/modales.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <img src="/static/img/Logo_circle.png" class="logo_g">
+        <p class="info_head">GLACER</p>
+        <div class="P_marc">
+            <button class="optmed-btn" id="vit-20" data-bs-toggle="modal" data-bs-target="#Mvitro">Vitromex</button></li>
+            <button class="optmed-btn" id="vit-21" data-bs-toggle="modal" data-bs-target="#Mdaltile">Daltile</button></li>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Castel</summary>
+                    <div class="opppp">
+                        <a href="/Cast_60x60" class="option111">60x60</a>
+                        <a href="/Cast_60x120" class="option111">60x120</a>
+                        <a href="/Cast_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Minato</summary>
+                    <div class="opppp">
+                        <a href="/Minato_30x45" class="option111">30x60</a>
+                        <a href="/Minato_30x60" class="option111">60x60</a>
+                        <a href="/Minato_60x60" class="option111">60x120</a>
+                        <a href="/Minato_60x120" class="option111">Más</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Tecnopiso</summary>
+                    <div class="opppp">
+                        <a href="/Tecno_30x60" class="option111">30x60</a>
+                        <a href="/Tecno_otras" class="option111">Más</a>
+                        <a href="/Tecno_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Cesantoni</summary>
+                    <div class="opppp">
+                        <a href="/Cesa_30x60" class="option111">30x60</a>
+                        <a href="/Cesa_otras" class="option111">Más</a>
+                        <a href="/Cesa_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Greda</summary>
+                    <div class="opppp">
+                        <a href="/Gred_30x45" class="option111">30x45</a>
+                        <a href="/Gred_30x60" class="option111">30x60</a>
+                        <a href="/Gred_otras" class="option111">Otras</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!--<p class="info_head panel_name">PANEL DE ADMINISTRADOR</p>-->
+        <div class="name_U"><p class="pipipi">{{hola}}</p></div><i class="fa fa-power-off" id="ckn"></i>
+        <span style="display: none;" id="span_privilegio">{{privilegio}}</span>
+    </header>
+    <form action="{{ url_for('logout') }}" method="post" class="off">
+        <button type="submit" class="off_S hiddentico" id="Cerrar_sesion">Cerrar sesión</button>
+    </form>
+    {% include 'Modales/Menu_vitro.html'%}
+    {% include 'Modales/Menu_daltile.html'%} 
+    <div class="contenedorsote">
+        <div class="menu_lateral barra_menu">
+            <ul class="list_prin" style="padding-left: 0px;">
+                <details class="cont_morP">
+                    <summary class="mas_prod"><i class="fa fa-cart-plus" style="color: #242424;"></i> Productos</summary>
+                    <div class="opt_panel_admin">
+                        <a href="/Pisos_Vitromex" class="option111 agreg_p" id="agreg_p"><i class="fa fa-plus-circle" id="faPlus"></i> Vitromex</a>
+                        <a href="/Pisos_Daltile" class="option111 agreg_p" id="agreg_p"><i class="fa fa-plus-circle" id="faPlus"></i> Daltile</a>
+                        <a href="/Pisos_Minato" class="option111 agreg_p" id="agreg_p"><i class="fa fa-plus-circle" id="faPlus"></i> Minato</a>
+                    </div>
+                </details>
+                <li type="none" class="chale"><a href="/griferia" class="Enlace" id="Enlace"><i class="fa fa-shower" style="color: #242424;"></i> Grifería</a></li>
+                <li type="none" class="chale"><a href="/Banos" class="Enlace" id="Enlace"><i class="fa fa-toilet" style="color: #242424;"></i> Baños</a></li>  
+                <details class="cont_morP">
+                    <summary class="mas_prod"><i class="fa fa-tags" style="color: #242424;"></i> Ofertas</summary>
+                    <div class="opt_panel_admin">
+                        <a href="/OFF_PM" class="option111 agreg_p" id="agreg_p"><i class="fa fa-box" id="faPlus"></i> Losetas</a>
+                        <a href="/OFF_GB" class="option111 agreg_p" id="agreg_p"><i class="fa fa-shower" id="faPlus"></i> Griferia</a>
+                    </div>
+                </details>             
+                <details class="cont_morP">
+                    <summary class="jeje" style="text-align: right; padding-right: 30px;"><i class="fa fa-comments-dollar" style="color: #242424;"></i> <span style="margin-left: 5px;">Lo más vendido</span></summary>
+                    <div class="opt_panel_admin masvend_opt">
+                        <a href="/Vitro_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Vitromex</a>
+                        <a href="/Daltile_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Daltile</a>
+                        <a href="/Minato_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Minato</a>
+                        <a href="/Castel_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Castel</a>
+                        <a href="/Cesant_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Cesantoni</a>
+                        <a href="/Greda_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Greda</a>
+                        <a href="/Tecno_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Tecnopiso</a>   
+                        <a href="/Ark_Masvend" class="option111 agreg_p" id="agreg_p"><i class="fa fa-chevron-right" id="faPlus"></i> Arko</a>
+                    </div>
+                </details>
+                <details class="cont_morP" id="Btn-Users">
+                    <summary class="mas_prod"><i class="fa fa-users" style="color: #242424;"></i> Usuarios</summary>
+                    <div class="opt_panel_admin">
+                        <a href="/Admins" class="option111 agreg_p" id="agreg_p"><i class="fa fa-user-circle" id="faPlus"></i> Admins</a>
+                        <a href="/subAdmins" class="option111 agreg_p" id="agreg_p"><i class="fa fa-user-circle" id="faPlus"></i> Subadmins</a>
+                    </div>
+                </details>  
+            </ul>
+        </div>
+        {% include 'CRUDS_Gif/Add/Add_asiento.html'%}
+        {% include 'CRUDS_Gif/Up/Up_asiento.html'%}
+        <main class="container">
+            <div class="container2">
+                <div class="row mt-2">
+                    <!-- <div class="col-2">
+                        <img src="/static/img/UMB_color_2.png" class="farm_a" alt="">
+                        <h2 class="far">Panel de:</h2>
+                        <i class="far_ahorro">Administrador</i>
+                        </div> -->
+                        <div id="contenedore" class="col-3" style="margin-right: 50px;">
+                        </div>
+                        <div class="contttiner" >
+                            <div class="content_cabecera" >
+                                <button class=" nuevo-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#registrar-asientos">+ Nuevo</button>
+                                <h5 class="text-center tit_product">Sección de Asientos</h5>
+                                <div class="search-container" id="div_busqueda">
+                                    <div class="lupa"><label for="search-input" class="jjj"><i class="fa fa-search" style="color: #6b6b6b;"></i></label><input type="text" id="search-input" class="" placeholder="Buscar..."></div>
+                                </div>
+                                <span id="no-results" class="text-danger" style="display: none;">¡Sin resultados para: !</span>
+                            </div>
+                            <div class="table-container" style="position: relative;">
+                            <table class="table table-responsive-sm table-striped" style="background-color: rgba(255, 255, 255, 0.849); text-align: center;" cellspacing="0">
+                            <thead class="thead-inverse">
+                                <tr class="text-center tabla_head">
+                                    <th>Clave</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Medida</th>
+                                    <th>Color</th>
+                                    <th>Marca</th>
+                                    <th>Tipo</th>
+                                    <th>Imagen</th>
+                                    <th id="Colu_Acc">Acciones</th>
+                                </tr>   
+                            </thead> 
+                            <tbody id="product-table-body">
+                                {%for asi in list_asi%}
+                                    <tr>
+                                    <td>{{asi.Codigo}}</td>
+                                    <td>{{asi.Nombre}}</td>
+                                    <td>{{asi.Precio}}</td>
+                                    <td>{{asi.Medida}}</td>
+                                    <td>{{asi.Color}}</td>
+                                    <td>{{asi.Marca}}</td>
+                                    <td>{{asi.Tipo}}</td>
+                                    <td><img src="{{asi.Imagen}}" alt="cenefa" class="img" style="width: 25px; height: 25px;"></td>
+                                    <td id="Col_data"><a href="#" class="eliminar" onclick="confirmDelete('{{url_for('E_Asiento', id= asi.Id_Asiento)}}')">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                        <button class="btn btn-success" id="btn_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-asientos{{asi.Id_Asiento}}"><i class="fa fa-edit"></i></button><!--<a href="ues-publicar-modal/">Actualizar</a>-->
+                                    </td>
+                                    </tr>
+                                    {%endfor%}
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="pie"><div class="paginado"><p class="pagina">Página:</p> <button class="pagination-btn" id="prev-page">
+        <i class="fa fa-arrow-left" style="color: white;"></i>
+    </button>
+    <div id="pagination-numbers" class="pagination-numbers">
+        <!-- Los números de página se cargarán aquí -->
+    </div>
+    <button class="pagination-btn" id="Pagina_sig" >
+        <i class="fa fa-arrow-right" style="color: white;" ></i>
+    </button></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="static/js/instrucciones.js"></script>
+    <script src="static/js/Valid_grif/Asientos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="/static/js/atras.js"></script>
+    <script type="text/javascript">
+        // Verificar si hay mensajes flash y asignarlos a una variable de JavaScript
+        {% if get_flashed_messages() %}
+            var flashMessage = "{{ get_flashed_messages()[0] }}"; // Tomar el primer mensaje de flash
+            if (flashMessage === 'Actualización exitosa') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Actualización exitosa',
+                    text: 'El producto se actualizó correctamente.',
+                    showConfirmButton: true,
+                });
+            }
+        {% endif %}
+    </script>
+</body>
+</html>

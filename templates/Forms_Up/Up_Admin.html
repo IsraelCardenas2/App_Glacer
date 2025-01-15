@@ -1,0 +1,30 @@
+{%for adm in users%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-admin{{adm.Id_Admin}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form action="{{url_for('Act_Admin', id=adm.Id_Admin)}}" method="post" class="form_reg rr2 upAdmin" enctype="multipart/form-data">
+                <div class="form-group campos_p">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{adm.Nombre}}" class="form-control inpt"  required>
+                    <span class="span_nombre spani" style="font-size: 10px; display: none;">Error !! el formato es: Aaa</span>
+                    <label for="Apellidos" class="lab">Apellido paterno:</label>
+                    <input type="text" name="Apellidos_act" value="{{adm.Apellidos}}" class="form-control inpt" required>
+                    <span class="span_apellidos spani" style="font-size: 10px; display: none;">Error !! el formato es: Aaa Aaa</span>
+                    <label for="Usuario" class="lab">Usuario:</label>
+                    <input type="text" name="Usuario_act" value="{{adm.Usuario}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_usuario spani" style="font-size: 10px; display: none;">Error !! sin espacios y símbolos antes o después</span>
+                    <div class="contenedor_files">
+                      <!-- Se generará un formulario multipasos para poder agregar los campos para recaudar la imágenes-->
+                    </div>
+                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="submit" class="float-right btn-registro">Actualizar</button>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{%endfor%}

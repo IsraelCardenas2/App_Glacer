@@ -1,0 +1,33 @@
+{%for s in users%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-subAdm{{s.Id_Sub_Admin}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form action="{{url_for('Act_SubAdm', id=s.Id_Sub_Admin)}}" method="post" class="form_reg rr2 upSub" enctype="multipart/form-data">
+                <div class="form-group campos_p">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{s.Nombre}}" class="form-control inpt"  required>
+                    <span class="span_nombre" style="font-size: 10px; display: none;">Error !! el formato es: Aaa</span>
+                    <label for="Apellidos" class="lab">Apellidos:</label>
+                    <input type="text" name="Apellidos_act" value="{{s.Apellidos}}" class="form-control inpt" required>
+                    <span class="span_apellidos" style="font-size: 10px; display: none;">Error !! el formato es: Aaa Aaa</span>
+                    <label for="Usuario" class="lab">Usuario:</label>
+                    <input type="text" name="Usuario_act" value="{{s.Usuario}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_usuario" style="font-size: 10px; display: none;">Error !! sin espacios y símbolos antes o después</span>
+                    <label for="Direccion" class="lab">Dirección:</label>
+                    <input type="text" name="Direccion_act" value="{{s.Direccion}}" class="form-control inpt" placeholder="" required>
+                    <span class="span_direccion" style="font-size: 10px; display: none;">El formato es: Calle 123, CP, localidad, Municipio </span>
+                    <div class="contenedor_files">
+                      <!-- Se generará un formulario multipasos para poder agregar los campos para recaudar la imágenes-->
+                    </div>
+                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="submit" class="float-right btn-registro">Actualizar</button>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{%endfor%}

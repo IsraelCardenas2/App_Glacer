@@ -1,0 +1,89 @@
+{%for Off_pm in list_product%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-Off_pm{{Off_pm.Id_Producto}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form action="{{url_for('Act_Pisos_Mur', id=Off_pm.Id_Producto)}}" method="post" class="form_reg rr2 upOff_PM" enctype="multipart/form-data">
+                <div class="form-group campos_p ">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{Off_pm.Nombre}}" class="form-control inpt" required>
+                    <span class="span_text">Error !! el formato a seguir es: Lake Beige</span>
+                    <label for="Codigo" class="lab">Codigo:</label>
+                    <input type="text" name="Codigo_act" value="{{Off_pm.Codigo}}" class="form-control inpt" required>
+                    <span class="span_codigo">Error !! solo mayúsculas y números</span>
+                    <label for="Precio" class="lab">Precio:</label>
+                    <input type="number" name="Precio_act" value="{{Off_pm.Precio}}" class="form-control inpt" required>
+                    <span class="span_precio">Error !! solo se aceptan números</span>
+                    <label for="Precio_anterior_act" class="lab">Precio anterior:</label>
+                    <input type="text" name="Precio_anterior_act" value="{{Off_pm.Precio_ant}}" class="form-control inpt" required>
+                    <span class="span_PrecioAnt">Error !! el precio es obligatorio</span>
+                    <label for="Medida_act" class="lab">Medida:</label>
+                    <input type="text" name="Medida_act" class="form-control inpt" id="inptI" value="{{Off_pm.Medida}}" placeholder="" required readonly>
+                    <!-- <select name="Medida_act" id="Medida" class="form-control inpt">
+                      <option value="{{Off_pm.Medida}}" class="disable">{{Off_pm.Medida}}</option>
+                      <option value="30x45" class="form-control">30x45</option>
+                      <option value="30x60" class="form-control">30x60</option>
+                      <option value="60x60" class="form-control">60x60</option>
+                      <option value="60x120" class="form-control">60x120</option>
+                      <option value="18x60" class="form-control">18x60</option>
+                      <option value="20x60" class="form-control">20x60</option>
+                    </select> -->
+                    <span class="span_medida">Error !! debe seleccionar una opción</span>
+                    <label for="Color" class="lab">Color:</label>
+                    <input type="text" name="Color_act" value="{{Off_pm.Color}}" class="form-control inpt" required>
+                    <span class="span_color">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Marca_act" class="lab">Marca: </label>
+                    <input type="text" name="Marca_act" class="form-control inpt" value="{{Off_pm.Marca}}" placeholder="" readonly required>
+                    <!-- <select name="Marca_act" id="Marca" class="form-control inpt">
+                      <option value="{{Off_pm.Marca}}" class="disable">{{Off_pm.Marca}}</option>
+                      <option value="Vitromex" class="form-control">Vitromex</option>
+                      <option value="Daltile" class="form-control">Daltile</option>
+                      <option value="Tecnopiso" class="form-control">Tecnopiso</option>
+                      <option value="Minato" class="form-control">Minato</option>
+                      <option value="Castel" class="form-control">Castel</option>
+                      <option value="Cesantoni" class="form-control">Cesantoni</option>
+                      <option value="Greda" class="form-control">Greda</option>
+                    </select> -->
+                    <span class="span_marca">Error !! debe seleccionar una opción.</span>
+                  </div>
+                  <div class="form-group Campos_P2">
+                    <label for="Material" class="lab">Material:</label>
+                    <input type="text" name="Material_act" value="{{Off_pm.Material}}" class="form-control inpt" required>
+                    <span class="span_material">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Acabado" class="lab">Acabado:</label>
+                    <input type="text" name="Acabado_act" value="{{Off_pm.Acabado}}" class="form-control inpt" required>
+                    <span class="span_acabado">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Contenido" class="lab">Contenido:</label>
+                    <input type="number" name="Contenido_act" value="{{Off_pm.Contenido}}" class="form-control" placeholder="" required>
+                    <span class="span_contenido">Error !! solo se aceptan números</span>
+                    <label for="Calidad_act" class="lab">Calidad:</label>
+                    <input type="text" name="Calidad_act" class="form-control inpt" value="Primera" readonly required>
+                    <!-- <select name="Calidad_act" id="Calidad" class="form-control inpt">
+                      <option value="{{Off_pm.Calidad}}" class="disable">{{Off_pm.Calidad}}</option>
+                      <option value="Primera" class="form-control">Primera</option>
+                      <option value="Segunda" class="form-control">Segunda</option>
+                    </select> -->
+                    <span class="span_calidad">Error !! debe seleccionar una opción</span>
+                    <label for="inptchaI" class="lab">Imagen:</label>
+                    <input type="file" name="Imagen_act" class="form-control inpt" id="inptchaI">
+                    <label for="inptchaI" class="lab">Imagen 2:</label>
+                    <input type="file" name="IMG2_act" class="form-control inpt" id="inptchaI">
+                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="submit" class="float-right btn-registro">Actualizar</button>
+                </div>  
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+{%endfor%}
+
+
+
+
+
+
+
+<!--  Me quedé en ofertas, Colocar el campo requerido. hace falta checar Pisos y Muros y calar todos los Forms ..........-->

@@ -1,0 +1,69 @@
+{%for p in list_product%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-products{{p.Id_Producto}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form action="{{url_for('Act_Producto', id=p.Id_Producto)}}" method="post" class="form_reg rr2 " id="ACT_FRM" enctype="multipart/form-data">
+                <div class="form-group campos_p ">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{p.Nombre}}" class="form-control inpt">
+                    <span class="span_text_act">Error !! el formato a seguir es: Lake Beige</span>
+                    <label for="Precio" class="lab">Precio:</label>
+                    <input type="number" name="Precio_act" value="{{p.Precio}}" class="form-control inpt">
+                    <span class="span_precio_act">Error !! solo se aceptan números</span>
+                    <label for="Material" class="lab">Material:</label>
+                    <input type="text" name="Material_act" value="{{p.Material}}" class="form-control inpt">
+                    <span class="span_material_act">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Acabado" class="lab">Acabado:</label>
+                    <input type="text" name="Acabado_act" value="{{p.Acabado}}" class="form-control inpt">
+                    <span class="span_acabado_act">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Marca_act" class="lab">Marca: </label>
+                    <input type="text" name="Marca_act" class="form-control inpt" value="{{p.Marca}}" placeholder="" readonly>
+                    <span class="span_marca_act">Error !! debe seleccionar una opción.</span>
+                    <label for="Calidad_act" class="lab">Calidad:</label>
+                    <select name="Calidad_act" id="Calidad" class="form-control inpt">
+                      <option value="{{p.Calidad}}" class="disable">{{p.Calidad}}</option>
+                      <option value="Primera" class="form-control">Primera</option>
+                      <option value="Segunda" class="form-control">Segunda</option>
+                    </select>
+                    <span class="span_calidad_act">Error !! debe seleccionar una opción</span>
+                    <label for="PrecioAnt" class="lab">Precio anterior:</label>
+                    <input type="number" name="PrecioAnt_act" value="{{p.PrecioAnt}}" class="form-control inpt">
+                    <span class="span_modelo_act">Error !! el modelo es obligatorio</span>
+                </div>
+                <div class="form-group Campos_P2">
+                    <label for="Codigo_act" class="lab">Codigo:</label>
+                    <input type="text" name="Codigo_act" value="{{p.Codigo}}" class="form-control inpt">
+                    <span class="span_codigo_act">Error !! solo mayúsculas y números</span>
+                    <label for="Color" class="lab">Color:</label>
+                    <input type="text" name="Color_act" value="{{p.Color}}" class="form-control inpt">
+                    <span class="span_color_act">Error !! usar mayúsculas y minúsculas</span>
+                    <label for="Medida_act" class="lab">Medida:</label>
+                    <select name="Medida_act" id="Medida" class="form-control inpt">
+                      <option >{{p.Id_Medida}}</option>
+                      <option value="30x45" class="form-control">30x45</option>
+                      <option value="30x60" class="form-control">30x60</option>
+                      <option value="60x60" class="form-control">60x60</option>
+                      <option value="60x120" class="form-control">60x120</option>
+                      <option value="18x60" class="form-control">18x60</option>
+                      <option value="20x60" class="form-control">20x60</option>
+                    </select>
+                    <span class="span_medida_act">Error !! debe seleccionar una opción</span>
+                    <label for="Contenido" class="lab">Contenido:</label>
+                    <input type="number" name="Contenido_act" value="{{p.Contenido}}" class="form-control" id="inptI" placeholder="" required>
+                    <span class="span_contenido_act">Error !! solo se aceptan números</span>
+                    <label for="inptchaI" class="lab">Imagen:</label>
+                    <input type="file" name="Imagen_act" class="form-control inpt" id="inptchaI">
+                    <label for="inptchaI" class="lab">Imagen 2:</label>
+                    <input type="file" name="IMG2_act" class="form-control inpt" id="inptchaI">
+                    <button class="btn-cancelar" type="button" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="submit" class="float-right btn-registro">Actualizar</button>
+                </div>  
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+{%endfor%}

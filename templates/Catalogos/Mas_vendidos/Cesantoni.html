@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Cesantoni</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/Catalogo.css">
+    <link rel="stylesheet" href="/static/css/mod_info.css">
+    <link rel="stylesheet" href="/static/css/Pis_Mur_Menu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+    <header class="Cabecera_principal">
+        <div class="cabeza">
+            <a href="/Login" class="log">
+                <img src="/static/img/Logo_circle.png" class="logo_g">
+            </a>
+            <p class="info_head">GLACER</p>
+            <div class="buscador">
+                <input type="text" class="barra_busq" id="search-bar" placeholder="Buscar ...">
+                <div class="icono" id="span_icono"><i class="fa fa-search" style="color: #1f1f1f; font-size: 19px; padding: 3px 0 0 5px;"></i></div>
+            </div>
+            <div class="name_comp">
+                <p class="info_head glamour" style="text-align: center;">GLACER</p>
+                <p class="info_head tlaco">Glamour Cerámico</p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="name_depa">Departamento: 
+                <details class="sub_men">
+                    <summary class="sum" style="list-style: none;">Pisos y Muros</summary>
+                    <div class="opppp">
+                        <a href="/Griferia" class="option111">Grifería</a>
+                        <a href="/Catalogo_Banos" class="option111">Baños</a>
+                        <a href="/Catalogo_Ofertas" class="option111">Ofertas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="barra_menu PM_menu">
+                <ul class="menu">
+                    <li class="sum_sum">
+                        Pisos
+                        <ul class="submenu">
+                            <li><details class="sub_men sumen_vitro">
+                                <summary class="sum_sum" style="list-style: none;" id="opt_marca">Vitromex</summary>
+                                <div class="opppp oppp_vitro" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_20x20" class="option111">20x20</a>
+                                    <a href="/Catalogo_36x36" class="option111">36x36</a>
+                                    <a href="/Catalogo_37x37" class="option111">37x37</a>
+                                    <a href="/Catalogo_45x45" class="option111">45x45</a>
+                                    <a href="/Catalogo_55x55" class="option111">55x55</a>
+                                    <a href="/Catalogo_60x60" class="option111">60x60</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_daltile">
+                                <summary class="sum_sum" style="list-style: none;" id="opt_marca">Daltile</summary>
+                                <div class="opppp oppp_daltile" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_D37x37" class="option111">37x37</a>
+                                    <a href="/Catalogo_D45x45" class="option111">45x45</a>
+                                    <a href="/Catalogo_D60x60" class="option111">60x60</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_minato">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Minato</summary>
+                                <div class="opppp oppp_minato" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_M60x60" class="option111">60x60</a>
+                                    <a href="/Catalogo_M60x120" class="option111">60x120</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_castel">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Castel</summary>
+                                <div class="opppp oppp_castel" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_C60x60" class="option111">60x60</a>
+                                    <a href="/Catalogo_C60x120" class="option111">60x120</a>
+                                </div>
+                            </details></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="menu">
+                    <li class="sum_sum">
+                        Muros
+                        <ul class="submenu">
+                            <li><details class="sub_men sumen_vitro">
+                                <summary class="sum_sum" style="list-style: none;" id="opt_marca">Vitromex</summary>
+                                <div class="opppp oppp_vitro" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_20x30" class="option111">20x30</a>
+                                    <a href="/Catalogo_30x60" class="option111">30x60</a>
+                                    <a href="/Catalogo_36x50" class="option111">36x50</a>
+                                    <a href="/Catalogo_50x100" class="option111">50x100</a>
+                                    <a href="/Catalogo_60x120" class="option111">60x120</a>
+                                    <a href="/Catalogo_duelas" class="option111">Duelas</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_daltile">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Daltile</summary>
+                                <div class="opppp oppp_daltile" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_D30x45" class="option111">30x45</a>
+                                    <a href="/Catalogo_Dduelas" class="option111">duelas</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_minato">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Minato</summary>
+                                <div class="opppp oppp_minato" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_M30x45" class="option111">30x45</a>
+                                    <a href="/Catalogo_M30x60" class="option111">30x60</a>
+                                    <a href="/Catalogo_M60x120" class="option111">60x120</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_castel">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Cesantoni</summary>
+                                <div class="opppp oppp_castel" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_Ce30x60" class="option111">30x60</a>
+                                    <a href="/Catalogo_CeDuelas" class="option111">Duelas</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_castel">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Tecnopiso</summary>
+                                <div class="opppp oppp_tecno" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_Te30x60" class="option111">30x60</a>
+                                    <a href="/Catalogo_TeDuelas" class="option111">Duelas</a>
+                                </div>
+                            </details></li>
+                            <li><details class="sub_men sumen_castel">
+                                <summary class="sum_sum" style="list-style: none; " id="opt_marca">Greda</summary>
+                                <div class="opppp oppp_greda" style="z-index: 9999;">
+                                    <a href="#" class="option111" style="background-color: rgb(240, 240, 240); color: black;">Elija una medida</a>
+                                    <a href="/Catalogo_Gre30x45" class="option111">30x45</a>
+                                    <a href="/Catalogo_Gre30x60" class="option111">30x60</a>
+                                </div>
+                            </details></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="/" class="opcion opt_uno">Inicio</a>
+                <button onclick="goBack()" class="opcion opt_cinco">Atrás</button>
+            </div>
+        </div>
+    </header>
+    <main class="principal">
+        <h1 class="text-center titulo_cata" style="z-index: 2;">Cesantoni</h1>
+        <div id="no-results-message" class="text-center" style="display: none; width: 100%; text-align: left; margin-top: 50px; padding-left: 50px;">
+            <h2 style="text-align: left; font-size: 17px; color: dark-gray;">Sin resultados para: <span id="search-query" style="color: red;"></span></h2>
+        </div>
+        <div class="tarjeta-container">
+            {% include 'Modales/Mod_Catalogos/Info_Product.html'%}
+            {% for product in list_product %}
+            <div class="card product-card">
+                <img src="{{ product.Imagen }}" alt="{{ product.Nombre }}">
+                <div class="card-body text-center">
+                    <h3>{{ product.Nombre }}</h3>
+                    <div class="datos_p">
+                        <p class="precio">$ {{ product.Precio }} <span class="e">MX</span></p>
+                        <p class="precioAnt"><s class="s">$ {{ product.PrecioAnt }}</s> <span class="e">MX</span></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p class="medida_cata">{{ product.Id_Medida }}<span class="mx">CM</span></p> 
+                    <button class="prin_btn btn-mas" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#Info{{product.Id_Producto}}">Más</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="/static/js/atras.js"></script>
+</body>
+</html>

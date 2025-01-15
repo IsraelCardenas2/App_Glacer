@@ -1,0 +1,49 @@
+
+  <!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="registrar-products">
+  <div class="modal-dialog">
+    <div class="modal-content mmmop1">
+      <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+          <div class="imagen_defect2">.</div>
+          <form action="/registro_producto" method="post" class="form_reg rr2" enctype="multipart/form-data">
+              <div class="form-group campos_p ">
+                  <label for="Nombre" class="lab">Nombre:</label>
+                  <input type="text" name="Nombre" class="form-control inpt" required>
+                  <span class="span_text">El campo es requerido !!</span>
+                  <label for="Precio" class="lab">Precio:</label>
+                  <input type="number" name="Precio" class="form-control inpt" required>
+                  <label for="Material" class="lab">Material:</label>
+                  <input type="text" name="Material" class="form-control inpt" required>
+                  <label for="Acabado" class="lab">Acabado:</label>
+                  <input type="text" name="Acabado" class="form-control inpt" placeholder="" required>
+                  <label for="Marca" class="lab">Marca:</label>
+                  <input type="text" name="Marca" class="form-control inpt" placeholder="" required>
+                  <label for="Calidad" class="lab">Calidad:</label>
+                  <input type="text" name="Calidad" class="form-control inpt" placeholder="" required>
+                  <label for="PrecioAnt" class="lab">Precio anterior:</label>
+                  <input type="text" name="Modelo" class="form-control inpt" placeholder="" required>
+                </div>
+                <div class="form-group Campos_P2">
+                  <label for="Codigo" class="lab">Codigo:</label>
+                  <input type="text" name="Codigo" class="form-control inpt" placeholder="" required>
+                  <label for="Color" class="lab">Color:</label>
+                  <input type="text" name="Color" class="form-control inpt" placeholder="" required>
+                  <label for="Medida" class="lab">Medida:</label>
+                  <input type="text" name="Medida" class="form-control inpt"id="" placeholder="" required>
+                  <label for="Contenido" class="lab">Contenido:</label>
+                  <input type="number" name="Contenido" class="form-control" id="" placeholder="" required>
+                  <label for="inptchaI" class="lab">Imagen:</label>
+                  <input type="file" name="Imagen" class="form-control inpt" id="inptchaI" placeholder="">
+                  <label for="inptchaI" class="lab">Imagen 2:</label>
+                  <input type="file" name="IMG2" class="form-control inpt" id="inptchaI" placeholder="">
+                  <div class="contenedor_files">
+                    <!-- Se generará un formulario multipasos para poder agregar los campos para recaudar la imágenes-->
+                  </div>
+                  <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                  <button type="submit" class="float-right btn-registro">Registrar</button>
+                </div>  
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

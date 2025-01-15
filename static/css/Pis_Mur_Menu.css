@@ -1,0 +1,86 @@
+/* Ocultar los submenús por defecto */
+.sub_men .opppp {
+    display: none;
+}
+
+/* Asegúrate de que los submenús se muestren solo cuando se abran */
+.sub_men[open] .opppp {
+    display: block;
+}
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 1px;
+}
+.sum_sum{
+    width: 158px;
+    text-align: center;
+    color: white;
+}
+.menu > li {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+    list-style: none;
+    list-style-type: none;
+}
+.sub_men{
+    list-style: none;
+    list-style-type: none;
+}
+.menu > li:hover {
+    background-color: #dadada;
+    color: black;
+}
+
+/* Submenú (de opciones dentro del menú) */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(51, 51, 51);
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    list-style: none;
+}
+
+.submenu a {
+    color: white;
+    padding: 1px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    transform: translate(0 0);
+    transition-duration: 0.2s;
+}
+
+/* Mostrar submenú cuando el elemento es hover */
+.menu > li:hover .submenu {
+    display: block;
+}
+#opt_marca{
+    color: white;
+}
+#opt_marca:hover{
+    background-color: white;
+    color: black;
+    margin-left: 0;
+    font-weight: 400;
+    font-size: 18px;
+    transform: translateX(-8px);
+}
+
+.option111{
+    padding: 0;
+    margin: 0;
+}

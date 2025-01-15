@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Registro de administradores</title>
+    <link rel="stylesheet" href="/static/css/principal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<body>
+  <div class="mensajes" id="mens_flash">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <br>
+            {% for category, message in messages %}
+                <div class="alert 
+                    {% if category == 'error' %}alert-danger
+                    {% elif category == 'success' %}alert-success
+                    {% endif %}
+                    alert-dismissible" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+  </div>
+  <div class="cont_principal">
+    <div class="cont_formu">
+      <form action="/registrar_admin" method="post" class="formulario">
+        <h3 class="title-t">FORMULARIO DE REGISTRO</h3>
+          <div class="form-group">
+          <input type="text" name="Nombre" class="inpt" placeholder="Nombre:" required style="margin-top: 25px;"><br>
+          <span class="span_nombre spani" style="font-size: 10px; margin: 1px 0 1px 25px; position: absolute; top: 38.4%; left: 28.4%;">Error !! el formato es: Aaa</span>
+          <input type="text" name="Apellidos" class="inpt" placeholder="Apellidos:" required style="margin-top: 25px;"><br>
+          <span class="span_apellidos spani" style="font-size: 10px; margin: 1px 0 1px 25px; position: absolute; top: 46.7%; left: 28.4%;">Error !! el formato es: Aaa Aaa</span>
+          <input type="text" name="Usuario" class="inpt" placeholder="Usuario:" required style="margin-top: 25px;"><br>
+          <span class="span_usuario spani" style="font-size: 10px; margin: 1px 0 1px 25px; position: absolute; top: 55%; left: 28.4%;">Error !! sin espacios y símbolos antes o después</span>
+          <input type="password" name="Contrasena" class="inpt" placeholder="Contraseña:" required style="margin-top: 25px;"><br>
+          <span class="span_contrasena spani" style="font-size: 10px; margin: 1px 0 1px 25px; position: absolute; top: 63%; left: 28.4%;">Mín: 8 caracteres, ejemplo: Contraseña_@A23 </span>
+          <input type="password" name="ConfirmarC" class=" inpt" placeholder="Confirmar contraseña:" required style="margin-top: 25px;"><br>
+          <span class="span_confirmC spani" style="font-size: 10px; margin: 1px 0 1px 25px; position: absolute; top: 71%; left: 28.4%;">Mín: 8 caracteres, usar mayús, minús, núm y símbolos </span>
+          <input type="hidden" name="Privilegio" class="inpt" value="Administrador">
+          </div>
+          <div class="form-botones" style="margin-top: 22px;">
+          <a type="button" class="btn-cancelar" href="/Admins">Cancelar</a>
+          <button type="submit" class="btn-registro">Registrar</button>
+          </div>
+      </form>
+    </div>
+    <div class="cont_logos">
+      <img class="logo" src="/static/img/Logo_G.png">
+      <div class="Empresa_name">
+          <h3 class="nombre_em">GLACER</h3>
+          <h4 class="nombre_em Gla">Glamour Cerámico</h4>
+          <h5 class="nombre_em rojo">Atlacomulco - Vías</h5>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  <script src="static/js/Valid_Admin.js"></script>
+</body>
+</html>

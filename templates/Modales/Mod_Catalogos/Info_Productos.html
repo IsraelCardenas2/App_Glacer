@@ -1,0 +1,40 @@
+{% for PM in list_product_PM %}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="vermas{{PM.Id_Producto}}">
+    <div class="modal-dialog">
+      <div class="modal-content mmmop1">
+        <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+            <div class="imagen_defect2">.</div>
+            <form class="form_reg rr2 " id="ACT_FRM">
+                <div class="form-group campos_p">
+                    <label for="Nombre" class="lab">Nombre:</label>
+                    <input type="text" name="Nombre_act" value="{{PM.Nombre}}" class="form-control inpt" readonly>
+                    <label for="Precio" class="lab">Precio:</label>
+                    <input type="number" name="Precio_act" value="{{PM.Precio}}" class="form-control inpt" readonly>
+                    <label for="PrecioAnt" class="lab">Precio anterior:</label>
+                    <input type="number" name="PrecioAnt_act" value="{{PM.PrecioAnt}}" class="form-control inpt" readonly>
+                    <label for="Medida_act" class="lab">Medida:</label>
+                    <input type="text" name="Color_act" value="{{PM.Id_Medida}}" class="form-control inpt" readonly>
+                    <label for="Color" class="lab">Color:</label>
+                    <input type="text" name="Color_act" value="{{PM.Color}}" class="form-control inpt" readonly>
+                </div>
+                <div class="form-group Campos_P2">
+                    <label for="Marca_act" class="lab">Marca: </label>
+                    <input type="text" name="Marca_act" class="form-control inpt" value="{{PM.Marca}}" placeholder="" readonly>
+                    <label for="Material" class="lab">Material:</label>
+                    <input type="text" name="Material_act" value="{{PM.Material}}" class="form-control inpt" readonly>
+                    <label for="Acabado" class="lab">Acabado:</label>
+                    <input type="text" name="Acabado_act" value="{{PM.Acabado}}" class="form-control inpt" readonly>
+                    <label for="Calidad_act" class="lab">Calidad:</label>
+                    <input type="text" name="Calidad_act" class="form-control inpt" value="{{PM.Calidad}}" placeholder="" readonly>
+                    <label for="Contenido" class="lab">Contenido:</label>
+                    <input type="number" name="Contenido_act" value="{{PM.Contenido}}" class="form-control inpt" id="inptI" placeholder="" readonly>
+                    <button class="btn-cancelar" type="button" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+                    <button type="submit" class="float-right btn-registro">Ver imagen</button>
+                </div>  
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+{%endfor%}

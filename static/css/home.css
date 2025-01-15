@@ -1,0 +1,1094 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Seccion del header */
+.Cabecera_principal{
+    position: sticky;
+    top: 0;
+    border: none;
+    border-bottom: solid 7px rgb(255, 0, 0);
+    background-color: white;
+    z-index: 1000;
+    transition: transform 0.4s ease;
+}
+
+.Cabecera_principal.headroom--unpinned {
+    transform: translateY(-100%); 
+}
+
+.Cabecera_principal.headroom--pinned {
+    transform: translateY(0);
+}
+
+.cabeza{
+    display: flex;
+    height: 70px;
+}
+.logo_g{
+    width: 60px;
+    height: 50px;
+    display: block;
+    margin: 13px 0 0 15px;
+}
+.info_head{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 600;
+    font-size: 26px;
+    font-style:normal;
+    margin: 18px 0px;
+    margin-left: 30px;
+    color: rgb(26, 26, 26);
+}
+.name_comp{
+    display: inline-block;
+    translate: 930px;
+    margin-right: 0px;
+    margin-left: 19px;
+    margin-top: 8px;
+}
+.glamour{
+    margin:0 auto;
+    font-weight: 400;
+    font-size: 23px;
+    text-shadow: 1px 1px 2px gray;
+    text-align: center;
+}
+.tlaco{
+    text-align: center;
+    margin: 0;
+    color: rgb(172, 0, 0);
+    font-weight: 350;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgb(202, 0, 0);
+    transform: translateY(-6px);
+}
+.menu{
+    margin: 0;
+    background-color: rgb(51, 51, 51);
+    height: 40px;
+}
+.barra_menu{
+    justify-content: center;
+    margin: 0px auto;
+    display: flex;
+    height: 55px;
+    width: 85%;
+}
+.opcion{
+    width: 90px;
+    margin: 5px 28px;
+    padding-top: 3px;
+    height: 30px;
+    text-decoration: none;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 300;
+    font-size: 16px;
+    font-style:normal;
+    text-align: center;
+}
+.opt_tres{
+    width: 150px;
+}
+.opt_cinco{
+    width: 120px;
+}
+.opcion:hover{
+    border-bottom: solid 2px white;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    transform: translateY(-3px);
+}
+/* Sección de bienvenida */
+.bienvenida{
+    height: 200px;
+    background-image: url('/static/img/Logos/porcelanato\ 02.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95%;
+}
+.gradiente{
+    height: 200px;
+    background-image:linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+.title_B{
+    margin-left: 110px;
+    padding-top: 25px;
+    font-weight: 500;
+    font-size: 39px;
+}
+.subtitle_B{
+    text-align: center;
+    margin-left: 80px;
+    width: 450px;
+    font-weight: 450;
+    font-size: 20px;
+    color: rgb(224, 0, 0);
+}
+.ver_prod{
+    display: block;
+    height: 30px;
+    width: 150px;
+    margin-left: 227px;
+    padding: 3px;
+    background-color: red;
+    border-radius: 5px;
+    border: solid 0.5px rgb(255, 203, 203);
+    box-shadow: -2px 3px 2px rgb(145, 145, 145);
+    text-align: center;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 380;
+    font-size: 15px;
+    font-style:normal;
+    color: white;
+}
+.ver_prod:hover{
+    color: rgb(255, 255, 255);
+    background-color: #3a3a3a;
+    border: solid 1.5px rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 380;
+    font-size: 15px;
+    font-style:normal;
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+.marcas{
+    margin: 30px auto;
+    width: 40%;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 29px;
+    font-style:normal;
+    color: rgb(36, 36, 36);
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px rgb(70, 70, 70);
+}
+.conten_marcas{
+    width: 96%;
+    margin-top: 5px;
+    margin-left: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+}
+.marca{
+    width: 75%;
+    margin-left: 10px;
+}
+.imagen{
+    width: 100%;
+    height: 177px;
+    border-radius: 3px;
+}
+.capa{
+    position: relative;
+    background-color: #3a3a3a;
+    height: 74%; 
+    width: 100%;
+    transform: translateY(-174px);
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.capa:hover{
+    position: relative;
+    background-color: #3a3a3a;
+    height: 74%; 
+    width: 100%;
+    transform: translateY(-176px);
+    opacity: 0.6;
+    transition-duration: 0.5s;
+}
+.capa_cat{
+    position: relative;
+    background-color: #3a3a3a;
+    height: 99%; 
+    width: 100%;
+    transform: translateY(-174px);
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.capa_cat:hover{
+    position: relative;
+    background-color: #3a3a3a;
+    height: 99%; 
+    width: 100%;
+    transform: translateY(-176px);
+    opacity: 0.6;
+    transition-duration: 0.5s;
+}
+.cat_grif{
+    display: block;
+    height: 100%;
+}
+.verP{
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    margin: 29% 0 0 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 24px;
+    font-style:normal;
+}
+.log_vitro{
+    margin: 0px auto;
+    width: 190px;
+    height: 40px;
+    background-image: url('/static/img/Logos/log_vitro.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+    
+}
+.log_daltile{
+    margin: 10px auto;
+    width: 150px;
+    height: 30px;
+    background-image: url('/static/img/Logos/daltile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_greda{
+    margin: 1px auto;
+    width: 110px;
+    height: 55px;
+    background-image: url('/static/img/Logos/Greda.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_castel{
+    margin: 10px auto;
+    width: 150px;
+    height: 33px;
+    background-image: url('/static/img/Logos/logo-castel.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_tecno{
+    margin: 10px auto;
+    width: 150px;
+    height: 35px;
+    background-image: url('/static/img/Logos/Tecnopiso.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_minato{
+    margin: 10px auto;
+    margin-bottom: 0;
+    width: 150px;
+    height: 40px;
+    background-image: url('/static/img/Logos/Minato_Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_cessatoni{
+    margin: 15px auto;
+    margin-bottom: 0;
+    width: 190px;
+    height: 30px;
+    background-image: url('/static/img/Logos/LOGO_CESANTONI-original.png');
+    background-size:190px 30px;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_arko{
+    margin: 10px auto;
+    width: 190px;
+    height: 40px;
+    background-image: url('/static/img/Logos/arko.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+
+/*----------- Seccion de departamentos --------- */
+
+.Seccion_Depa{
+    background-color: #ffffff;
+    padding-bottom: 3%;
+}
+.departamentos{
+    margin: 0px auto;
+    padding-top: 35px;
+    width: 300px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 29px;
+    font-style:normal;
+    color: rgb(12, 12, 12);
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px rgb(59, 59, 59);
+}
+.depas{
+    margin: 15px auto;
+    width: 70%;
+    height: 390px;
+    display: grid;
+    grid-template-areas: 
+    "bater pisos pisos ofertas"
+    "bater pisos pisos ofertas"
+    "bater grifs grifs ofertas"
+    "bater grifs grifs ofertas";
+    grid-template-rows: 2fr 2rf 2fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    gap: 10px;
+}
+.B{
+    grid-area: bater;
+    background-image: url('/static/img/Logos/bater.jpg');
+    background-size:cover;
+    background-position: 55%;
+    background-repeat: no-repeat;
+    box-shadow: -2px 3px 3px gray;
+}
+.PM{
+    grid-area: pisos;
+    background-image: url('/static/img/Logos/losetas.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 3px 3px gray;
+}
+.G{
+    grid-area: grifs;
+    background-image: url('/static/img/Logos/griferia.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 3px 3px gray;
+}
+.OF{
+    grid-area: ofertas;
+    background-image: url('/static/img/Logos/sala.jpg');
+    background-size:cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    box-shadow: 2px 3px 3px gray;
+}
+.opacidad{
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 100%;
+}
+.opacidad:hover{
+    background-color: rgba(30, 45, 255, 0.637);
+    height: 100%;
+    color: white;
+}
+.nom_depa{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 45%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 580;
+    font-size: 25px;
+    font-style:normal;
+}
+.ofe{
+    top: 30%;
+}
+.descuento{
+    background-color: rgba(245, 14, 14, 0.952);
+    width: 100%;
+    height: 68px;
+}
+.ahorro{
+    color: white;
+    width: 42%;
+    margin-top: 8px;
+    margin-left: 10px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 580;
+    font-size: 18px;
+    font-style:normal;
+    display: inline-block;
+    text-align: center;
+}
+.porcentaje{
+    color: white;
+    width: 35%;
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 780;
+    font-size: 33px;
+    font-style:normal;
+    display: inline-block;
+    margin-left: 30px;
+    padding-bottom: 5px;
+    transform: translateY(-5px);
+}
+.distribuidor{
+    margin: 15px auto;
+    width: 55%;
+    height: 170px;
+    background-image: url('/static/img/Logos/sala.jpg');
+    background-size: cover;
+    background-position: 1% 75%;
+    background-repeat: no-repeat;
+    display: flex;
+    border-radius: 3px;
+}
+.triangulo_rojo{
+    background-color: rgba(209, 0, 0, 0.836);
+    clip-path: polygon(0% 0%, 100% 0%, 30% 100%, 0% 100%);
+    display: inline-block;
+    width: 40%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.mensaje{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 24px;
+    font-style:normal;
+    transform: rotate(-41deg);
+    width: 170px;
+    margin-top: 48px;
+    margin-left: 14px;
+}
+.info{
+    margin-left: 43%;
+    margin-top: 99px;
+    width: 12%;
+    height: 28%;
+    background-color: rgba(209, 0, 0, 0.836);
+    border-radius: 10px;
+    border: solid 1px white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 580;
+    font-size: 11px;
+    font-style:normal;
+    color: white;
+    box-shadow: 0px 3px 2px rgb(85, 85, 85);
+}
+#btn-moreInfo:hover{
+    transform: scale(1.1);
+    border-width: 2px;
+}
+.body_2{
+    translate: -70px 0;
+}
+/* ---------- Seccion de info empresa -------------------- */
+
+.Seccion_acerca{
+    width: 100%;
+}
+.acerca{
+    width: 40%;
+    margin: 30px auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 30px;
+    font-style:normal;
+    color: black;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: -1px 1px 1px rgb(122, 122, 122);
+}
+.contenet_acerca{
+    width: 100%;
+    padding: 4% 5%;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+}
+.cuadro_rojo{
+    background-color: rgb(49, 49, 49);
+    box-shadow: 4px 5px 3px gray;
+    border-radius: 2px;
+}
+.t_1{
+    margin: 15px auto;
+    width: 50%;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 480;
+    font-size: 20px;
+    font-style:normal;
+    text-align: center;
+}
+.descripcion{
+    background-color: rgb(255, 250, 250);
+    margin: 22px auto;
+    width: 90%;
+    padding: 20px 35px;
+    color: rgb(24, 24, 24);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 380;
+    font-size: 17px;
+    font-style:normal;
+    text-align: justify;
+    border-radius: 2px;
+    border: solid 3px #fafafa;
+}
+.pie{
+    background-color: rgb(56, 56, 56);
+    height: 130px;
+    width: 100%;
+    padding: 1% 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 5px;
+}
+.direc{
+    color: white;
+    width: 50%;
+    margin: 5px auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 280;
+    font-size: 16px;
+    font-style:normal;
+    text-align: center;
+}
+.directo{
+    color: white;
+    width: 90%;
+    margin: 15px auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 280;
+    font-size: 14px;
+    font-style:normal;
+    text-align: justify;
+}
+.tel{
+    text-align: center;
+}
+
+
+/* --------- Modal información distribuidor ---------------- */
+.modal-content{
+    transform: translateX(-90px);
+    width: 800px;
+}
+.modal-body{
+    width: 800px;
+    background-color: white;
+}
+.imagen_defect{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    padding: 15px 0 15px 15px;
+}
+.img{
+    background-image: url('/static/img/cajas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+}
+.rojo{
+    margin-top: 299px;
+    background-color:rgb(238, 0, 0);
+    height: 90px;
+    padding-top: 15px;
+}
+.grupo{
+    margin: 0px auto;
+    width: 80%;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 580;
+    font-size: 26px;
+    font-style:normal;
+    text-align: center;
+}
+.best{
+    margin: 0% auto;
+    width: 70%;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 580;
+    font-size: 17px;
+    font-style:normal;
+    text-align: center;
+}
+.texto_info{
+    background-color: #f1f1f1;
+    margin: 0px 15px 0px 0px;
+}
+.tit{
+    width: 53%;
+    margin: 20px auto 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 680;
+    font-size: 18px;
+    font-style:normal;
+    text-transform: uppercase;
+}
+.campos{
+    display: flex;
+}
+.campos_p{
+    padding: 20px;
+}
+.spanE{
+    display: none;
+}
+.inpt{
+    margin-bottom: 10px;
+    height: 32px;
+}
+.btn-registro{
+    margin-left: 50%;
+    margin-top: 19px;
+    width: 50%;
+    height: 9%;
+    background-color: #198754;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 550;
+    font-size: 16px;
+    font-style:normal;
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+}
+.btn-registro:hover{
+    background-color: rgb(245, 40, 40);
+}
+.two{
+    margin-top: 5px;
+}
+.tree{
+    margin-top: 5px;
+}
+.footer{
+    background-color: rgb(78, 78, 78);
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+    padding: 10px;
+}
+.textcont{
+    color: white;
+    text-align: justify;
+    padding: 5px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 380;
+    font-size: 13px;
+    font-style:normal;
+}
+.cel{
+    width: 95%;
+    margin: 5px auto;
+    color: white;
+    text-align: justify;
+    padding: 5px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 300;
+    font-size: 13px;
+    font-style:normal;
+}
+
+
+/*----------------------- Sección de nombres para cada categoría en grifería -----------------------------------*/
+
+.log_accesorios{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Accesorios.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_asientos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Asientos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_brazos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Brazos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_calentadorSol{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/CalentadorS.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_calentadorPaso{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/CalentadorP.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_campanas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Campanas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_cenefa{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Cenefas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_cespols{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Cespols.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_contracanastas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Contracanastas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_dispensadores{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Dispensadores.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_espejos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Espejos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_herramienta{
+    margin: 0px auto;
+    width: 60%;
+    height: 50px;
+    background-image: url('/static/img/Nombre_categ/HerameintasCol.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_impermeabilizantes{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Impermeabilizantes.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_kits_install{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Kits_install.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_mallas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/mallas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_manerales{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Manerales.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_mezcladoras{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Mezcladoras.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_monomandos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Monomandos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_Organizadores{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Organizadores.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_ovalines{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Ovalines.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_paneles{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Paneles.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_parrillas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Parrilas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_perfiles{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Perfiles.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_persianas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Persianas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_regaderas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Regaderas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_repisas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Repisas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_resumideros{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Resumideros.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_separadores{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Separadores.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_tarjas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Tarjas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_tinas{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/tinas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_tocadores{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Tocadores.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+
+/* ---------------------------------- Sección de baños -------------------------------------*/
+
+.log_inodoros{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Inodoros.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_migitorios{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Migitorios.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_tinacos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Tinacos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_lavabos{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Lavabos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+.log_kit_sanintario{
+    margin: 0px auto;
+    width: 45%;
+    height: 22px;
+    background-image: url('/static/img/Nombre_categ/Kit_sanitario.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-160px);
+}
+
+
+
+
+/*------------------- Estilos span rexpreciones ------------------*/
+
+.span_nombre {
+    display: none;
+    font-size: 12px;
+}
+.span_puesto {
+    display: none;
+    font-size: 12px;
+}
+.span_n_negocio {
+    display: none;
+    font-size: 12px;
+}
+.span_giro {
+    display: none;
+    font-size: 12px;
+}
+.span_ubicacion {
+    display: none;
+    font-size: 12px;
+}
+.span_correo {
+    display: none;
+    font-size: 12px;
+}
+.span_telefono {
+    display: none;
+    font-size: 12px;
+}
+.span_experiencia {
+    display: none;
+    font-size: 12px;
+}

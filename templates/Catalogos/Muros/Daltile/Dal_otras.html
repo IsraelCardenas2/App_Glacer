@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Daltile más formatos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/Catalogo.css">
+    <link rel="stylesheet" href="/static/css/mod_info.css">
+    <link rel="stylesheet" href="/static/css/Pis_Mur_Menu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+</head>
+<body>
+    <header class="Cabecera_principal">
+        <div class="cabeza">
+            <a href="/Login" class="log">
+                <img src="/static/img/Logo_circle.png" class="logo_g">
+            </a>
+            <p class="info_head">GLACER</p>
+            <div class="buscador">
+                <input type="text" class="barra_busq" id="search-bar" placeholder="Buscar ...">
+                <div class="icono" id="span_icono"><i class="fa fa-search" style="color: #1f1f1f; font-size: 19px; padding: 3px 0 0 5px;"></i></div>
+            </div>
+            <div class="name_comp">
+                <p class="info_head glamour" style="text-align: center;">GLACER</p>
+                <p class="info_head tlaco">Glamour Cerámico</p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="barra_menu">
+                <a href="/" class="opcion opt_uno">Inicio</a>
+                <a href="/Catalogo_PM" class="opcion opt_dos">Pisos y Muros</a>
+                <a href="/Griferia" class="opcion opt_tres">Grifería</a>
+                <a href="/Catalogo_Banos" class="opcion opt_cuatro">Baños</a>
+                <a href="/Catalogo_Ofertas" class="opcion opt_cinco">Ofertas</a>
+            </div>
+        </div>
+    </header>
+    <main class="principal">
+        <h1 class="text-center titulo_cata">Daltile más formatos</h1>
+        <div id="no-results-message" class="text-center" style="display: none; width: 100%; text-align: left; margin-top: 50px; padding-left: 50px;">
+            <h2 style="text-align: left; font-size: 17px; color: dark-gray;">Sin resultados para: <span id="search-query" style="color: red;"></span></h2>
+        </div>
+        <div class="tarjeta-container">
+            {% include 'Modales/Mod_Catalogos/hola_img.html'%}
+            {% for product in list_product %}
+            <div class="card product-card">
+                <img src="{{ product.IMG2 }}" alt="{{ product.Nombre }}">
+                <div class="card-body text-center">
+                    <h3>{{ product.Nombre }}</h3>
+                    <div class="datos_p">
+                        <p class="precio">${{ product.Precio }} <span class="mx">MX</span></p>
+                        <p class="precioAnt"><s class="s">${{ product.PrecioAnt }}</s> <span class="mx">MX</span></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p class="medida_cata">{{ product.Id_Medida }}<span class="mx">CM</span></p> 
+                    <button class="prin_btn btn-mas" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#Info{{product.Id_Producto}}">Más</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="/static/js/atras.js"></script>
+</body>
+</html>

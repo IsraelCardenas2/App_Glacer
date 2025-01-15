@@ -1,0 +1,386 @@
+.modal-content{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.modal-body{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.bod_men{
+    display: inline;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 8px;
+}
+.title{
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    /* background-color: rgb(120, 194, 255); */
+    padding-top: 1px;
+    padding-bottom: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.titulo_m{
+    width: 60%;
+    margin: 0px auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 350;
+    font-size: 25px;
+    font-style:normal;
+    text-align: center;
+    color: white;
+}
+.optmed-btn{
+    border: none;
+    height: 35px;
+    width: 75px;
+}
+.contenedor_m{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    padding: 10px;
+}
+
+.nombre{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 60%;
+    margin-left: 25%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 350;
+    font-size: 22px;
+    font-style:normal;
+    text-align: center;
+}
+.medida:hover{
+    background-color: rgba(136, 136, 136, 0.616);
+    .nombre{
+        color: white;
+    }
+}
+#otrasM{
+    width: 90%;
+}
+/* -------------------------- Estilos para la vista de sub admin -----------------------------------------------*/
+
+
+/*--------------------------- Sección del formulario para registrar productos de pisos y muros ------------------------*/
+
+.formulario_vitroP{
+    margin: 30px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding-right: 10px;
+    height: 95%;
+}
+.rgi{
+    width: 99%;
+    margin-left: 0;
+}
+#inptchaI{
+    font-size: 14px;
+}
+
+#div_form_modl{ /*Este estilo le pertenece al formulario de pruebas "Multipart_Prueba"*/
+    width: 100%;
+}
+.mmmop1{
+    width:700px;
+    margin-top: 40px;
+    transform: translateX(-100px);
+    border-radius: 4px;
+}
+.mmmop2{
+    width: 750px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+.op22{
+    height: 95%;
+}
+.imagen_defect2{
+    display: inline-block;
+    width: 240px;
+    height: 100%;
+    background-image: url('/static/img/room_log.jpg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: rgba(255, 255, 255, 0);
+}
+.rr2{
+    display: flex;
+    width: 475px;
+}
+.disable{
+    font-style: normal gray;
+}
+.Form_Gen{
+    margin-left: 5px;
+    width: 95%;
+    margin-bottom: 15px;
+}
+.form_V{
+    height: 100%;
+}
+.span_text {
+    display: none; /* Ocultar por defecto */
+    font-size: 12px;
+}
+.span_precio {
+    display: none; 
+    font-size: 12px;
+}
+.span_material {
+    display: none; 
+    font-size: 12px;
+}
+.span_acabado {
+    display: none; 
+    font-size: 12px;
+}
+.span_marca {
+    display: none; 
+    font-size: 12px;
+}
+.span_calidad {
+    display: none; 
+    font-size: 12px;
+}
+.span_PrecioAnt {
+    display: none; 
+    font-size: 12px;
+}
+.span_codigo {
+    display: none;
+    font-size: 12px;
+}
+.span_color {
+    display: none;
+    font-size: 12px;
+}
+.span_medida {
+    display: none;
+    font-size: 12px;
+}
+.span_modelo {
+    display: none;
+    font-size: 12px;
+}
+.span_contenido {
+    display: none;
+    font-size: 12px;
+}
+.span_complementos {
+    display: none;
+    font-size: 12px;
+}
+.span_tipo {
+    display: none;
+    font-size: 12px;
+}
+.span_flujo_agua {
+    display: none;
+    font-size: 12px;
+}
+.span_presion {
+    display: none;
+    font-size: 12px;
+}
+.span_capacidad {
+    display: none;
+    font-size: 12px;
+}
+.span_servicio {
+    display: none;
+    font-size: 12px;
+}
+.span_caracteristicas {
+    display: none;
+    font-size: 12px;
+}
+.span_duracion {
+    display: none;
+    font-size: 12px;
+}
+.span_medida_llaves {
+    display: none;
+    font-size: 12px;
+}
+.span_contracanasta {
+    display: none;
+    font-size: 12px;
+}
+.span_alimentador {
+    display: none;
+    font-size: 12px;
+}
+.span_tipo_install {
+    display: none;
+    font-size: 12px;
+}
+.span_tipo_colocacion {
+    display: none;
+    font-size: 12px;
+}
+.span_tiempo_entrega {
+    display: none;
+    font-size: 12px;
+}
+.span_consumo_agua {
+    display: none;
+    font-size: 12px;
+}
+.span_detalles {
+    display: none;
+    font-size: 12px;
+}
+/* ---------------------------------- Forms Actualizar */
+
+.span_text_act {
+    display: none;
+    font-size: 12px;
+}
+.span_precio_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_material_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_acabado_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_marca_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_calidad_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_modelo_act {
+    display: none; 
+    font-size: 12px;
+}
+.span_codigo_act {
+    display: none;
+    font-size: 12px;
+}
+.span_color_act {
+    display: none;
+    font-size: 12px;
+}
+.span_medida_act {
+    display: none;
+    font-size: 12px;
+}
+.span_contenido_act {
+    display: none;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- Sección de páginado ----------------------------------------*/
+
+/* Paginación */
+.paginado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.pagina{
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.pagination-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.pagination-numbers {
+    display: flex;
+}
+
+.pagination-number {
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 13%;
+}
+
+.pagination-number.active {
+    background-color: red;
+    color: white;
+}
+
+.pagination-number:hover {
+    background-color: lightgray;
+}
+
+
+
+
+.mensaje_adm{
+    position: absolute;
+    top: 8%;
+    left: 29%;
+    width: 40%;
+    z-index: 10000;
+    text-align: center;
+}
+
+
+.table>:not(caption)>*>*{
+    padding: 0.3em !important;
+}
+td{
+    padding: 25px auto;
+}
+.eliminar{
+    height: 25px;
+    width: 25px;
+    padding: 0%;
+    margin: 0;
+}
+.fa-trash{
+    height: 20px;
+    width: 20px;
+}
+#btn_actualizar{
+    height: 25px;
+    width: 25px;
+    padding: 0%;
+    margin-top: -2.5px;
+    margin-left: 5px;
+}
+.fa-edit{
+    height: 10px;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+}

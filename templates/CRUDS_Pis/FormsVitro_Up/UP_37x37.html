@@ -1,0 +1,57 @@
+{%for p37x37 in list_product%}
+<!--<button class="btn btn-info mt-4 ues-btn" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#actualizar-Registro">Guardar</button>-->
+<div class="modal fade" tabindex="-1" id="actualizar-37x37{{p37x37.Id_Producto}}">
+  <div class="modal-dialog">
+    <div class="modal-content mmmop1">
+      <div class="modal-body mmmop2" style="padding: 0 0 0 0;">
+          <div class="imagen_defect2">.</div>
+          <form action="{{url_for('Act_VitroP37x37', id=p37x37.Id_Producto)}}" method="post" class="form_reg rr2 upPisMur" enctype="multipart/form-data">
+              <div class="form-group campos_p ">
+                  <label for="Nombre" class="lab">Nombre:</label>
+                  <input type="text" name="Nombre_act" value="{{p37x37.Nombre}}" class="form-control inpt" required>
+                  <span class="span_text">Error !! el formato a seguir es: Lake Beige</span>
+                  <label for="Precio" class="lab">Precio:</label>
+                  <input type="number" name="Precio_act" value="{{p37x37.Precio}}" class="form-control inpt" required>
+                  <span class="span_precio">Error !! solo se aceptan números</span>
+                  <label for="Material" class="lab">Material:</label>
+                  <input type="text" name="Material_act" value="{{p37x37.Material}}" class="form-control inpt" required>
+                  <span class="span_material">Error !! usar mayúsculas y minúsculas</span>
+                  <label for="Acabado" class="lab">Acabado:</label>
+                  <input type="text" name="Acabado_act" value="{{p37x37.Acabado}}" class="form-control inpt" required>
+                  <span class="span_acabado">Error !! usar mayúsculas y minúsculas</span>
+                  <label for="Marca_act" class="lab">Marca: </label>
+                  <input type="text" name="Marca_act" class="form-control inpt" placeholder="" value="{{p37x37.Marca}}" readonly>
+                  <span class="span_marca">Error !! debe seleccionar una opción.</span>
+                  <label for="Calidad_act" class="lab">Calidad:</label>
+                  <input type="text" name="Calidad_act" value="{{p37x37.Calidad}}" class="form-control inpt" readonly>
+                  <span class="span_calidad">Error !! debe seleccionar una opción</span>
+                  <label for="PrecioAnt" class="lab">Precio anterior:</label>
+                  <input type="number" name="PrecioAnt_act" value="{{p37x37.PrecioAnt}}" class="form-control inpt" required>
+                  <span class="span_PrecioAnt">Error !! el precio es obligatorio</span>
+              </div>
+              <div class="form-group Campos_P2">
+                  <label for="Codigo" class="lab">Codigo:</label>
+                  <input type="text" name="Codigo_act" value="{{p37x37.Codigo}}" class="form-control inpt" required>
+                  <span class="span_codigo">Error !! solo mayúsculas y números</span>
+                  <label for="Color" class="lab">Color:</label>
+                  <input type="text" name="Color_act" value="{{p37x37.Color}}" class="form-control inpt" required>
+                  <span class="span_color">Error !! usar mayúsculas y minúsculas</span>
+                  <label for="Medida_act" class="lab">Medida:</label>
+                  <input type="text" name="Medida_act" value="{{p37x37.Id_Medida}}" class="form-control inpt" readonly>
+                  <span class="span_medida">Error !! debe seleccionar una opción</span>
+                  <label for="Contenido" class="lab">Contenido:</label>
+                  <input type="number" name="Contenido_act" value="{{p37x37.Contenido}}" class="form-control" required>
+                  <span class="span_contenido">Error !! solo se aceptan números</span>
+                  <label for="inptchaI" class="lab">Imagen:</label>
+                  <input type="file" name="Imagen_act" class="form-control inpt" id="inptchaI">
+                  <label for="inptchaI" class="lab">Imagen 2:</label>
+                  <input type="file" name="IMG2_act" class="form-control inpt" id="inptchaI">
+                  <button type="button" class="btn-cancelar" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                  <button type="submit" class="float-right btn-registro">Actualizar</button>
+              </div>  
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{%endfor%}

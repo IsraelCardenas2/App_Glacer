@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/Panel_Adm.css">
+    <link rel="stylesheet" href="/static/css/modales.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/css/grif.css">
+</head>
+<body>
+    <header>
+        <img src="/static/img/Logo_circle.png" class="logo_g">
+        <p class="info_head">GLACER</p>
+        <div class="P_marc">
+            <button class="optmed-btn" id="vit-20" data-bs-toggle="modal" data-bs-target="#Mvitro">Vitromex</button></li>
+            <button class="optmed-btn" id="vit-21" data-bs-toggle="modal" data-bs-target="#Mdaltile">Daltile</button></li>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Castel</summary>
+                    <div class="opppp">
+                        <a href="/Cast_60x60" class="option111">60x60</a>
+                        <a href="/Cast_60x120" class="option111">60x120</a>
+                        <a href="/Cast_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Minato</summary>
+                    <div class="opppp">
+                        <a href="/Minato_30x45" class="option111">30x60</a>
+                        <a href="/Minato_30x60" class="option111">60x60</a>
+                        <a href="/Minato_60x60" class="option111">60x120</a>
+                        <a href="/Minato_60x120" class="option111">Más</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Tecnopiso</summary>
+                    <div class="opppp">
+                        <a href="/Tecno_30x60" class="option111">30x60</a>
+                        <a href="/Tecno_otras" class="option111">Más</a>
+                        <a href="/Tecno_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Cesantoni</summary>
+                    <div class="opppp">
+                        <a href="/Cesa_30x60" class="option111">30x60</a>
+                        <a href="/Cesa_otras" class="option111">Más</a>
+                        <a href="/Cesa_duelas" class="option111">Duelas</a>
+                    </div>
+                </details>
+            </div>
+            <div class="list barra_menu">
+                <details class="sub_men">
+                    <summary class="sum">Greda</summary>
+                    <div class="opppp">
+                        <a href="/Gred_30x45" class="option111">30x45</a>
+                        <a href="/Gred_30x60" class="option111">30x60</a>
+                        <a href="/Gred_otras" class="option111">Otras</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!--<p class="info_head panel_name">PANEL DE ADMINISTRADOR</p>-->
+        <div class="name_U"><p class="pipipi">{{hola}}</p></div><i class="fa fa-power-off" id="ckn"></i>
+        <span style="display: none;" id="span_privilegio">{{privilegio}}</span>
+    </header>
+    <form action="{{ url_for('logout') }}" method="post" class="off">
+        <button type="submit" class="off_S hiddentico" id="Cerrar_sesion">Cerrar sesión</button>
+    </form>
+    <div class="sub_head">
+        <button onclick="goBack()" class="btn btn-primary" id="atras" style="width: 7%;">Atrás</button>
+        <h3 class="title_grif">CATEGORIAS</h3>
+    </div>
+    <div class="menu">
+        <a href="/perfiles" class="grif enlace_cat" style="border-top-left-radius: 5px;">Perfiles</a>
+        <a href="/Cenefas" class="grif enlace_cat">Cenefas</a>
+        <a href="/Mallas" class="grif enlace_cat">Mallas</a>
+        <a href="/Manerales" class="grif enlace_cat">Manerales</a>
+        <a href="/Regaderas" class="grif enlace_cat">Regaderas</a>
+        <a href="/Brazos" class="grif enlace_cat">Brazos</a>
+        <a href="/Parrillas" class="grif enlace_cat" style="border-top-right-radius: 5px;">Parrilas</a>
+        <a href="/Campanas" class="grif enlace_cat">Campanas</a>
+        <a href="/Tarjas" class="grif enlace_cat">Tarjas</a>
+        <a href="/Accesorios" class="grif enlace_cat">Accesorios de baño</a>
+        <a href="Dispensadores" class="grif enlace_cat padd">Dispensadores de jabon</a>
+        <a href="/Mezcladoras" class="grif enlace_cat">Mezcladoras</a>
+        <a href="/Monomandos" class="grif enlace_cat">Monomandos</a>
+        <a href="/Kits" class="grif enlace_cat">Kits de instalación</a>
+        <a href="/Persianas" class="grif enlace_cat">Persianas</a>
+        <a href="/Organizadores" class="grif enlace_cat padd">Organizadores para baño</a>
+        <a href="/Asientos" class="grif enlace_cat">Asientos</a>
+        <a href="/Separadores" class="grif enlace_cat">Separdores</a>
+        <a href="/Herramientas" class="grif enlace_cat padd">Herramientas de colocación</a>
+        <a href="/CalentadoresS" class="grif enlace_cat">Calentadores solares</a>
+        <a href="/CalentadoresP" class="grif enlace_cat padd">Calentadores de paso</a>
+        <a href="/Espejos" class="grif enlace_cat">Espejos</a>
+        <a href="/Repisas" class="grif enlace_cat">Repisas</a>
+        <a href="/Contracanastas" class="grif enlace_cat">Contracanastas</a>
+        <a href="/Resumideros" class="grif enlace_cat">Resumideros</a>
+        <a href="/Cespols" class="grif enlace_cat" >Céspol</a>
+        <a href="/Impers" class="grif enlace_cat">Impermeabilizantes</a>
+        <a href="/Paneles" class="grif enlace_cat" style="border-bottom-right-radius: 5px;">Paneles y canceles</a>
+        <a href="/Tinas" class="grif enlace_cat" style="border-bottom-left-radius: 5px;">Tinas</a>
+        <a href="#" class="grif enlace_cat"></a>
+        <a href="#" class="grif enlace_cat" style="border-bottom-right-radius: 5px;"></a>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="/static/js/atras.js"></script>
+</body>
+</html>

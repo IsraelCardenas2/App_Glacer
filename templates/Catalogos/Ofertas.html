@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Departamento de ofertas</title>
+    <link rel="stylesheet" href="/static/css/Catalogo.css">
+    <link rel="stylesheet" href="/static/css/mod_info.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+</head>
+<body>
+    <header class="Cabecera_principal">
+        <div class="cabeza">
+            <a href="/Login" class="log">
+                <img src="/static/img/Logo_circle.png" class="logo_g">
+            </a>
+            <p class="info_head">GLACER</p>
+            <div class="buscador">
+                <input type="text" class="barra_busq" id="search-bar" placeholder="Buscar ...">
+                <div class="icono" id="span_icono"><i class="fa fa-search" style="color: #1f1f1f; font-size: 19px; padding: 3px 0 0 5px;"></i></div>
+            </div>
+            <div class="name_comp">
+                <p class="info_head glamour" style="text-align: center;">GLACER</p>
+                <p class="info_head tlaco">Glamour Cerámico</p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="name_depa">Departamento: 
+                <details class="sub_men">
+                    <summary class="sum" style="list-style: none;">Ofertas</summary>
+                    <div class="opppp">
+                        <a href="#" class="option111">Pisos y Muros</a>
+                        <a href="#" class="option111">Baños</a>
+                        <a href="#" class="option111">Grifería</a>
+                    </div>
+                </details>
+            </div>
+            <div class="barra_menu PM_menu">
+                <a href="/" class="opcion opt_uno">Inicio</a>
+                <a href="/Catalogo_PM" class="opcion opt_dos">Pisos y Muros</a>
+                <a href="/Griferia" class="opcion opt_tres">Grifería</a>
+                <a href="/Catalogo_Banos" class="opcion opt_cuatro">Baños</a>
+                <button onclick="goBack()" class="opcion opt_cinco">Atrás</button>
+            </div>
+        </div>
+    </header>
+    <main class="principal">
+        <div class="img_fondo_Ofertas">
+            <div class="contenedor_rombos">
+                <div class="rombo_uno"></div> 
+                <div class="rombo_tres"> <p class="texto_ofert"><span class="exlamacion">¡</span>Todo a un mejor precio<span class="exlamacion">!</span></p> </div>
+            </div>
+        </div>
+        
+        {% include 'Modales/Mod_ofertas.html'%}
+        <div id="no-results-message" class="text-center" style="display: none; width: 100%; text-align: left; margin-top: 50px; padding-left: 50px;">
+            <h2 style="text-align: left; font-size: 17px; color: dark-gray;">Sin resultados para: <span id="search-query" style="color: red;"></span></h2>
+        </div>
+        <div class="tarjeta-container">
+            {% for product in Product_Off %}
+            <div class="card product-card">
+                <img src="{{ product.IMG2 }}" alt="{{ product.Nombre }}">
+                <div class="card-body text-center">
+                    <h3>{{ product.Nombre }}</h3>
+                    <div class="datos_p">
+                        <p class="precio">$ {{ product.Precio }}</p>
+                        <p class="precioAnt">$ {{ product.Precio_ant }}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prin_btn btn-mas" id="formulario_actualizar" data-bs-toggle="modal" data-bs-target="#Info{{product.Id_Producto}}">Menos</button>
+                    <p class="medida_cata">{{ product.Medida }}<span class="mx">CM</span></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="/static/js/atras.js"></script>
+</body>
+</html>

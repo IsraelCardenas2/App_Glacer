@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo_G.ico">
+    <title>Glacer Atlacomulco Vías</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/Catalogo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+    <header class="Cabecera_principal">
+        <div class="cabeza">
+            <a href="/Login" class="log">
+                <img src="/static/img/Logo_circle.png" class="logo_g">
+            </a>
+            <p class="info_head">GLACER</p>
+            <div class="name_comp">
+                <p class="info_head glamour">GLACER</p>
+                <p class="info_head tlaco">Glamour Cerámico</p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="barra_menu">
+                <a href="/" class="opcion opt_uno">Inicio</a>
+                <a href="/Catalogo_PM" class="opcion opt_dos" style="width: 150px;">Pisos y Muros</a>
+                <a href="/Griferia" class="opcion opt_tres">Grifería</a>
+                <a href="/Catalogo_Ofertas" class="opcion opt_cuatro">Ofertas</a>
+                <button onclick="goBack()" class="opcion opt_cinco">Atrás</button>
+            </div>
+        </div>
+    </header>
+    <main class="cuerpo">
+        <div class="depa_banos_catalog">
+            <div class="gradiente" style="height: 250px; padding-top: 28px;">
+                <h3 class="title_B">Departamento de Baños</h3>
+                <h4 class="subtitle_B" style="margin-left: 100px; margin-top: 25px:">Encuentra lo que necesitas a un mejor precio</h4>
+
+            </div>
+        </div>
+        <div class="seccion_Marcas">
+            <h3 class="marcas">ELIJE UNA CATEGORÍA</h3>
+            <div class="conten_marcas uno">
+                <div class="marca">
+                    <img src="/static/img/Banos/Inodoros.jpg" class="imagen" alt="Vitromex">
+                    <a href="/Cat_Inodoros" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Inodoros</p>
+                        </div>
+                    </a>
+                    <div class="nombre_marca " style="font-size: 38px;">Inodoros</div>
+                </div>
+                <div class="marca">
+                    <img src="/static/img/Banos/Kit_san.webp" class="imagen" alt="Daltile">
+                    <a href="/Cat_Kit_san" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Kits sanitarios</p>
+                        </div>
+                    </a>
+                    <!--<div class="log_daltile"></div>-->
+                </div>
+                <div class="marca">
+                    <img src="/static/img/Banos/Lavabos.jpg" class="imagen" alt="Greda">
+                    <a href="/Cat_Lavabos" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Lavabos</p>
+                        </div>
+                    </a>
+                    <!--<div class="log_greda"></div>-->
+                </div>
+                <div class="marca">
+                    <img src="/static/img/Banos/Migitorios.webp" class="imagen" alt="Castel">
+                    <a href="/Cat_Migitorios" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Migitorios</p>
+                        </div>
+                    </a>
+                    <!--<div class="log_castel"></div>-->
+                </div>
+                <div class="marca">
+                    <img src="/static/img/banos/Tinacos.jpg" class="imagen" alter="Tecnopiso">
+                    <a href="/Cat_Tinacos" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Tinacos</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="marca">
+                    <img src="/static/img/Griferia/Ovalines.webp" class="imagen" alt="ARKO">
+                    <a href="/Cat_Ovalines" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Ovalines</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="marca">
+                    <img src="/static/img/Griferia/Tocadores.jpg" class="imagen" alt="ARKO">
+                    <a href="/Cat_Tocadores" class="enlace">
+                        <div class="capa">
+                            <p class="verP">Tocadores</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="pie">
+        <div class="cn Direccion">
+            <h5 class="direc">Dirección</h5>
+            <p class="directo">Av. Arturo Montiel Rojas no. 17, col. zona industrial, Atlacomulco, Estado de México.</p>
+        </div>
+        <div class="cn Telefonos">
+            <h5 class="direc">Teléfonos</h5>
+            <p class="directo tel"><i class="phone"></i> +55 52 43 78 65 10</p>
+            <p class="directo tel"><i class="phone"></i> +55 71 22 16 44 03</p>
+        </div>
+        <div class="cn Correo">
+            <h5 class="direc">Coreo</h5>
+            <p class="directo tel"><i class="gmail"></i> admon_corporativo@yahoo.com.mx</p>
+        </div>
+        <div class="cn Redes">
+            <h5 class="direc">Redes sociales</h5>
+            <p class="directo tel"><i class="facebook"></i> Glacer_Vitromex_las_Vías</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="/static/js/atras.js"></script>
+</body>
+</html>
