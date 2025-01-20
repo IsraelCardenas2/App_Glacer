@@ -195,7 +195,7 @@
     <script>
         function confirmDelete(url) {
             Swal.fire({
-                title: '¿Estás seguro de eliminar el producto?',
+                title: '¿Estás seguro de eliminar el usuario?',
                 icon: 'error',
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar',
@@ -228,6 +228,20 @@
                     icon: 'error',
                     title: '¡Error!',
                     text: 'La sesión del usuario está activa.',
+                    showConfirmButton: true,
+                });
+            }
+        {% endif %}
+    </script>
+    <script type="text/javascript">
+        // Verificar si hay mensajes flash y asignarlos a una variable de JavaScript
+        {% if get_flashed_messages() %}
+            var flashMessage = "{{ get_flashed_messages()[0] }}"; // Tomar el primer mensaje de flash
+            if (flashMessage === 'Actualización exitosa') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Actualización exitosa',
+                    text: 'El usuario se actualizó correctamente.',
                     showConfirmButton: true,
                 });
             }

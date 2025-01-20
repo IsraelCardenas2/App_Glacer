@@ -2,8 +2,7 @@ runtime: python39  # Esto especifica la versión de Python, usa la versión que 
 entrypoint: gunicorn -b :$PORT App_Glacer:app  # Asegúrate de que el nombre de tu archivo y app sean correctos.
 
 env_variables:
-  # Aquí puedes agregar variables de entorno si es necesario.
-  # Ejemplo: FLASK_ENV: "production"
+  CLOUD_STORAGE_BUCKET: "imagenes_2025"
 
 instance_class: F2  # Define el tipo de instancia. F2 es adecuado para aplicaciones básicas.
 

@@ -6,7 +6,7 @@ import os
 
 
 
-engine = create_engine('mysql://root@localhost/glacer_vias')
+engine = create_engine('mysql://root:App_Glacer@34.51.27.97:3306/glacer_vias')
 pool_size=50, 
 max_overflow=80,
 db_session = scoped_session(sessionmaker(bind=engine))

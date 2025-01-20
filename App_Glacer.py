@@ -11,6 +11,7 @@ from conexion_db import Database
 from conexion_db import engine
 from conexion_db import db_session
 from flask import url_for
+from google.cloud import storage
 from werkzeug.utils import secure_filename
 from functools import wraps
 
@@ -23,6 +24,7 @@ app = Flask(__name__)
 app.secret_key = 'UMB[Hola_Israel]13SC191'
 Database.metadata.create_all(engine)
 
+storage_client = storage.Client()
 # Configuración de carpetas donde se guardarán las imágenes
 # ----------------- Pisos y Muros -------------------------
 IMGS_PM_Vitro = 'static/imagenes/Pisos_Muros/Vitromex'
@@ -1645,36 +1647,51 @@ def registro_producto():
     Nom = request.form['Nombre']
     Prec = request.form['Precio']
     Marc = request.form['Marca']
-    Model = request.form['Modelo']
+    PreAnt = request.form['PrecioAnt']
     Mat = request.form['Material']
     Acab = request.form['Acabado']
     Col = request.form['Color']
     Medi = request.form['Medida']
     Cont = request.form['Contenido']
     Cal = request.form['Calidad']
+    img3 = request.form['Codigo']
+    img4 = request.form['Hola']
 
 
-    def save_image(image_field):
-        if image_field:
-            file = request.files[image_field]
-            if file and file.filename != '':
-                unique_id = str(uuid.uuid4())  # Generar identificador unico
-                filename = secure_filename(file.filename)
-                name, ext = os.path.splitext(filename)  # Separamos el nombre y extensión
-                new_filename = f"{unique_id}_{name}{ext}"  # Renombramos el archivo
+    def save_image(image_field, imagenes_2025):
+    # Obtén el archivo de la solicitud (asumiendo que 'image_field' es el nombre del campo en el formulario)
+        file = request.files[image_field]
+        
+        if file:
+            # Generar un nombre único para evitar colisiones de nombres
+            file_name = f"{uuid.uuid4().hex}_{secure_filename(file.filename)}"
+            
+            # Obtén el bucket de Google Cloud Storage
+            bucket = storage_client.get_bucket(imagenes_2025)
+            
+            # Subir la imagen al bucket
+            blob = bucket.blob(file_name)
+            blob.upload_from_file(file, content_type=file.content_type)
+            
+            # Ya no es necesario llamar a blob.make_public() si el acceso uniforme está habilitado
+            # Los permisos para acceso público deben configurarse a nivel de IAM para todo el bucket
+            
+            # Devuelve la URL pública del archivo (esto se puede usar directamente en tu aplicación)
+            return blob.public_url  # La URL pública generada será la que se usa en la base de datos
 
-                file.save(os.path.join(app.config['IMGS_PM_Vitro'], new_filename))
-                return os.path.join(app.config['IMGS_PM_Vitro'], new_filename)
         return None
 
-    Img = save_image('Imagen')
-    Img2 = save_image('IMG2')
+
+
+    # En tu método de registro de productos
+    Img = save_image('Imagen', 'imagenes_2025')
+    Img2 = save_image('IMG2', 'imagenes_2025')
 
     nuevo_producto = models.Productos(
         Nombre=Nom,
         Precio=Prec,
         Marca=Marc,
-        Modelo=Model,
+        Modelo=PreAnt,
         Material=Mat,
         Acabado=Acab,
         Color=Col,
@@ -1683,7 +1700,8 @@ def registro_producto():
         Calidad=Cal,
         Imagen=Img,
         IMG2=Img2,
-
+        IMG3=img3,
+        IMG4=img4,
     )
 
     db_session.add(nuevo_producto)
@@ -1710,21 +1728,22 @@ def regVitro_productos():
     Cal = request.form['Calidad']
     
     if Medi == '20x20':
-        def save_image(image_field):
-            if image_field:
-                file = request.files[image_field]
-                if file and file.filename != '':
-                    unique_id = str(uuid.uuid4())  # Generar identificador unico
-                    filename = secure_filename(file.filename)
-                    name, ext = os.path.splitext(filename)  # Separamos el nombre y extensión
-                    new_filename = f"{unique_id}_{name}{ext}"  # Renombramos el archivo
+        def save_image(image_field, imagenes_2025):
+            file = request.files[image_field]
+            if file:
+                file_name = f"{uuid.uuid4().hex}_{secure_filename(file.filename)}"
+                
+                bucket = storage_client.get_bucket(imagenes_2025)
 
-                    file.save(os.path.join(app.config['IMGS_PM_Vitro'], new_filename))
-                    return os.path.join(app.config['IMGS_PM_Vitro'], new_filename)
+                blob = bucket.blob(file_name)
+                blob.upload_from_file(file, content_type=file.content_type)
+                
+                return blob.public_url  
+
             return None
 
-        Img = save_image('Imagen')
-        Img2 = save_image('IMG2')
+        Img = save_image('Imagen', 'imagenes_2025')
+        Img2 = save_image('IMG2', 'imagenes_2025')
         nuevo_producto = models.Vitro_20x20(
             Nombre = Nom, Precio = Prec, Codigo = Cod, Marca = Marc, PrecioAnt = PreA, Material = Mat, Acabado = Acab, Color = Col, Id_Medida = Medi, Contenido = Cont, Calidad = Cal, Imagen = Img, IMG2 = Img2,
         )
@@ -8374,21 +8393,22 @@ def Add_Accesorio():
     Mat = request.form['Material']
     Com = request.form['Complementos']
 
-    def save_image(image_field):
-        if image_field:
+    def save_image(image_field, imagenes_2025):
             file = request.files[image_field]
-            if file and file.filename != '':
-                unique_id = str(uuid.uuid4())  # Generar identificador unico
-                filename = secure_filename(file.filename)
-                name, ext = os.path.splitext(filename)  # Separamos el nombre y extensión
-                new_filename = f"{unique_id}_{name}{ext}"  # Renombramos el archivo
+            if file:
+                file_name = f"{uuid.uuid4().hex}_{secure_filename(file.filename)}"
+                
+                bucket = storage_client.get_bucket(imagenes_2025)
 
-                file.save(os.path.join(app.config['IMGS_GF_Accesorio'], new_filename))
-                return os.path.join(app.config['IMGS_GF_Accesorio'], new_filename)
-        return None
+                blob = bucket.blob(file_name)
+                blob.upload_from_file(file, content_type=file.content_type)
+                
+                return blob.public_url  
 
-    Imag = save_image('Imagen')
-    Img2 = save_image('IMG2')
+            return None
+
+    Imag = save_image('Imagen', 'imagenes_2025')
+    Img2 = save_image('IMG2', 'imagenes_2025')
     
     nuevo_accesorio = models.Accesorio(
         Nombre = Name,
@@ -12537,6 +12557,7 @@ def Act_Daltile_Masven(id):
     producto_act.Imagen = update_image('Imagen_act', producto_act.Imagen)
     producto_act.IMG2 = update_image('IMG2_act', producto_act.IMG2)
 
+
     # Actualizar otros campos
     producto_act.Nombre = Name_act
     producto_act.Precio = Prec_act
@@ -13412,6 +13433,7 @@ def E_Arko_Masven(id):
 @app.post('/Act_Producto/<id>')
 @Acceso_requerido
 def Act_Producto(id):
+    # Obtener el producto a actualizar por ID
     producto_act = db_session.query(models.Productos).get(id)
 
     if producto_act is None:
@@ -13432,40 +13454,64 @@ def Act_Producto(id):
     Cont_act = request.form['Contenido_act']
     Cal_act = request.form['Calidad_act']
 
-    def save_image(image_field):
+    # Función para subir una nueva imagen al bucket de Google Cloud Storage
+    def save_image(image_field, imagenes_2025):
         file = request.files.get(image_field)
 
         if file and file.filename != '':
-            unique_id = str(uuid.uuid4())  # Generar identificador único
-            filename = secure_filename(file.filename)
-            name, ext = os.path.splitext(filename)  # Separar nombre y extensión
-            new_filename = f"{unique_id}_{name}{ext}"  # Renombrar el archivo
-            try:
-                file.save(os.path.join(app.config['IMGS_PM_Vitro'], new_filename))
-                return os.path.join(app.config['IMGS_PM_Vitro'], new_filename)  # Retornar la ruta completa
-            except Exception as e:
-                print(f"Error al guardar la imagen: {e}")
-                return None  # Retornar None si hubo un error
-        else:
-            return None  # Retornar None si no hay archivo
-    
-    # Función para guardar la imagen y manejar eliminación de la antigua
-    def update_image(image_field, current_image_path):
-        new_image_path = save_image(image_field)
-        if new_image_path and current_image_path and os.path.exists(current_image_path):
-            os.remove(current_image_path)  # Eliminar la imagen antigua
-        return new_image_path if new_image_path else current_image_path
+            # Generar un nombre único para evitar colisiones de nombres
+            file_name = f"{uuid.uuid4().hex}_{secure_filename(file.filename)}"
+            
+            # Obtener el bucket de Google Cloud Storage
+            bucket = storage.Client().get_bucket(imagenes_2025)
+            
+            # Subir la imagen al bucket
+            blob = bucket.blob(file_name)
+            blob.upload_from_file(file, content_type=file.content_type)
+            
+            # Devuelve la URL pública del archivo
+            return blob.public_url
+        
+        return None  # Si no hay archivo, retorna None
 
-    # Actualizar imágenes si se han subido nuevas
-    producto_act.Imagen = update_image('Imagen_act', producto_act.Imagen)
-    producto_act.IMG2 = update_image('IMG2_act', producto_act.IMG2)
+    # Función para eliminar una imagen del bucket, utilizando la URL pública
+    def delete_image_from_bucket(image_url, imagenes_2025):
+        # Obtener el nombre del archivo desde la URL de la imagen
+        image_name = image_url.split('/')[-1]  # El nombre del archivo es la última parte de la URL
+        
+        # Obtener el bucket de Google Cloud Storage
+        bucket = storage.Client().get_bucket(imagenes_2025)
+        
+        # Eliminar el archivo del bucket
+        blob = bucket.blob(image_name)
+        blob.delete()
+
+    # Función para actualizar las imágenes: Si hay nueva imagen, reemplaza la antigua
+    def update_image(image_field, current_image_url, imagenes_2025):
+        # Si no se proporciona un nuevo archivo, mantenemos la imagen actual
+        new_image_url = save_image(image_field, imagenes_2025)
+        
+        if new_image_url:
+            # Si hay una nueva imagen, eliminamos la antigua del bucket
+            if current_image_url:
+                delete_image_from_bucket(current_image_url, imagenes_2025)
+            return new_image_url  # Retornamos la nueva URL pública de la imagen
+        
+        # Si no hay nueva imagen, mantenemos la URL actual
+        return current_image_url
+
+    # Función para manejar la actualización de un producto
+    def update_product(producto_act, imagenes_2025):
+        # Actualizar las imágenes (si se proporcionan nuevas)
+        producto_act.Imagen = update_image('Imagen_act', producto_act.Imagen, imagenes_2025)
+        producto_act.IMG2 = update_image('IMG2_act', producto_act.IMG2, imagenes_2025)
 
     # Actualizar otros campos
     producto_act.Nombre = Name_act
     producto_act.Precio = Prec_act
     producto_act.Codigo = Cod_act
     producto_act.Marca = Marc_act
-    producto_act.PrecioAnt = PreA_act
+    producto_act.Modelo = PreA_act
     producto_act.Material = Mat_act
     producto_act.Acabado = Acab_act
     producto_act.Color = Col_act
@@ -13473,10 +13519,11 @@ def Act_Producto(id):
     producto_act.Contenido = Cont_act
     producto_act.Calidad = Cal_act
 
+    # Guardar cambios en la base de datos
     db_session.commit()
     flash('Actualización exitosa')
+    
     return redirect(url_for('Acceso'))
-
 
 @app.post('/Act_Admin/<id>')
 @Acceso_requerido
@@ -13539,35 +13586,47 @@ def Act_SubAdm(id):
 @app.get('/E_Producto/<id>')
 @Acceso_requerido
 def E_Producto(id):
+    # Buscar el producto por su ID
     product = db_session.query(models.Productos).get(id)
     
     if product is None:
         flash('ID no encontrado')
         return redirect(url_for('Acceso'))
-    
-    image_paths = [product.Imagen, product.IMG2]
-    
-    # Ruta base donde se almacenan las imágenes
-    base_path = 'static/imagenes/Pisos_Muros/Vitromex'
 
-    for image_path in image_paths:
-        if image_path:
-            # Crear la ruta completa de la imagen
-            full_path = os.path.join(base_path, os.path.basename(image_path))  
+def delete_image_from_bucket(image_url, bucket_name):
+    
+    if image_url:
+        # El nombre del archivo es la parte final de la URL, ya que el archivo está en el bucket
+        file_name = image_url.split('/')[-1]
+        
+        try:
+            # Accedemos al bucket
+            bucket = storage_client.get_bucket(bucket_name)
+            blob = bucket.blob(file_name)
             
-            if os.path.exists(full_path):
-                try:
-                    os.remove(full_path)
-                    print(f'Imagen {full_path} eliminada con éxito.')
-                except OSError as e:
-                    print(f'Error al eliminar la imagen {full_path}: {e}')
-            else:
-                print(f'Imagen {full_path} no encontrada.')
+            # Eliminar el archivo (blob) del bucket
+            blob.delete()
+            print(f'Imagen {file_name} eliminada correctamente del bucket {bucket_name}.')
+        except Exception as e:
+            print(f'Error al eliminar la imagen {file_name} del bucket {bucket_name}: {e}') 
+    
+    # Lista de URLs de las imágenes a eliminar
+    image_urls = [product.Imagen, product.IMG2]
+    
+    # Nombre del bucket donde se almacenan las imágenes
+    bucket_name = 'imagenes_2025'
 
+    # Eliminar las imágenes del bucket
+    for image_url in image_urls:
+        if image_url:
+            delete_image_from_bucket(image_url, bucket_name)
+
+    # Eliminar el producto de la base de datos
     db_session.delete(product)
     db_session.commit()
-    
+
     return redirect(url_for('Acceso'))
+
 
 
 # @app.get('/E_Admin/<id>')

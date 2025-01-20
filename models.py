@@ -41,6 +41,8 @@ class Productos(Database):
     Calidad = Column(String(50))
     Imagen = Column(String(256))
     IMG2 = Column(String(256))
+    IMG3 = Column(String(256))
+    IMG4 = Column(String(256))
 
     
 # class Marca(Database):
